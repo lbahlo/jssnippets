@@ -36,3 +36,12 @@ function addNode() {
 
 
 ````
+
+````
+//Check if variable is array
+var myArray = [];
+if (myArray instanceof Array) {
+   // do something...
+}
+
+````

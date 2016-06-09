@@ -45,3 +45,9 @@ if (myArray instanceof Array) {
 }
 
 ````
+
+````
+Goals
+Start with a brute force solution, look for repeat work in that solution, and modify it to only do that work once.
+
+````

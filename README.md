@@ -1,5 +1,6 @@
 "# jssnippets" 
 
+````
 // Function factory
 function Car () {
   var self = {
@@ -14,3 +15,4 @@ function Car () {
 }
  
 var myCar = Car();
+````

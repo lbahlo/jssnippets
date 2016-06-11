@@ -10,11 +10,11 @@ var myModule = (function() {
       var vm = {};
    
       //public  
-      vm.isPrime = isPrime;   
+      vm.XXX = XXX;   
      
-      function isPrime(number) { 
+      function XXX(....r) { 
   
-          return xxx;
+          return yyy;
 
        };
  
@@ -26,10 +26,9 @@ var myModule = (function() {
 //Tests Edge cases "null, 0 negative, min, max"
 
      var tests = myModule;
-     console.log(tests(...));
-     
-     ````
+     console.log(tests(...));  
 
+````
 
 ````
 // adding html element 
@@ -49,6 +48,7 @@ function addNode() {
 </html>
 
 ````
+
 
 ````
 //Check if variable is array

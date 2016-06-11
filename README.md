@@ -32,19 +32,25 @@ var myModule = (function() {
 	    return vm;
       
     })();
-
-    //test
     
+    
+    //tests
+
+     var tests = myModule;
+    
+   
     //edge cases
-    console.log(myModule.isPrime(0));  
-    console.log(myModule.isPrime(-1));
+    console.log(tests.isPrime(0));  
+    console.log(tests.isPrime(-1));
     
     //non prim numbers
-    console.log(myModule.isPrime(4));
-    console.log(myModule.isPrime(6.789));
+    console.log(tests.isPrime(4));
+    console.log(tests.isPrime(6.789));
     
     //prime numbers
-    console.log(myModule.isPrime(3));
+    console.log(tests.isPrime(3));
+ //   console.log(myModule().isPrime(5));
+     debugger
     console.log(myModule.isPrime(5));
 
 ````

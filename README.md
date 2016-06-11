@@ -30,8 +30,10 @@ var myModule = (function() {
 
 ````
 
+"#  adding html element " 
+
 ````
-// adding html element 
+
 <html> 
 <head> <title>t1</title> 
 
@@ -49,9 +51,10 @@ function addNode() {
 
 ````
 
+"#  Check if variable is array "
 
 ````
-//Check if variable is array
+
 var myArray = [];
 if (myArray instanceof Array) {
    // do something...
@@ -64,6 +67,8 @@ Goals
 Start with a brute force solution, look for repeat work in that solution, and modify it to only do that work once.
 
 ````
+
+"Factoral(x)"
 
 ````
 //Factoral(x) 
@@ -79,8 +84,11 @@ function factorial(x){
 console.log(factorial(5))
 
 
-//GreatestCommonDivisor  start
+````
 
+
+"GreatestCommonDivisor"
+````
 //Write a JavaScript program to find the greatest common divisor (gcd) of two positive 
 function greatedCommonDivisor(n1,n2,gcd) {
  
@@ -106,7 +114,6 @@ function greatedCommonDivisor(n1,n2,gcd) {
    console.log(greatedCommonDivisor(4,8,1));
    console.log(greatedCommonDivisor(4,9,1));
    
-   //GreatestCommonDivisor  end
          
 ````
 

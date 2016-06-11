@@ -116,3 +116,44 @@ Goals
 Start with a brute force solution, look for repeat work in that solution, and modify it to only do that work once.
 
 ````
+
+````
+//Factoral(x) 
+
+function factorial(x){
+  if (x ===1){
+    return 1;
+  }
+  return x * factorial(x-1)  
+  
+}
+
+console.log(factorial(5))
+
+
+
+//Write a JavaScript program to find the greatest common divisor (gcd) of two positive 
+function greatedCommonDivisor(n1,n2,gcd) {
+ 
+    var x = Math.min(n1,n2);
+    if ( gcd === Math.min(n1,n2) ) {
+       return gcd;
+    }
+    
+    var posGcd = gcd+1; 
+   
+    while (posGcd <= Math.min(n1,n2) ) {
+      if (  (n1 % posGcd) === 0 && (n2 % posGcd) === 0 ) {
+          gcd = posGcd;
+          greatedCommonDivisor(n1,n2,gcd);
+      }   
+      
+      posGcd++;
+    }
+    
+    return gcd; 
+}
+   //tests
+   console.log(greatedCommonDivisor(4,8,1));
+   console.log(greatedCommonDivisor(4,9,1));
+````

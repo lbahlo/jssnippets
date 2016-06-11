@@ -1,6 +1,57 @@
 "# jssnippets" 
 
 ````
+//XXX Ttile
+
+//What are you testing? 
+//requirements (e.g.)
+// Prime ==> Number can be divded by 1 and self only
+// 0 is not Prime
+// 1 is not Prime
+// negative numbers are not prime
+
+//What Should it do?  -  if given input is a prime number return true else false
+//What is the Actual Output
+//What is the Execptec Output  - True or False
+
+
+
+var myModule = (function() {
+     'use strict';
+      var vm = {};
+   
+      //public  
+      vm.isPrime = isPrime;   
+     
+      function isPrime(number) { 
+  
+          return xxx;
+
+       };
+ 
+	    return vm;
+      
+    })();
+
+    //test
+    
+    //edge cases
+    console.log(myModule.isPrime(0));  
+    console.log(myModule.isPrime(-1));
+    
+    //non prim numbers
+    console.log(myModule.isPrime(4));
+    console.log(myModule.isPrime(6.789));
+    
+    //prime numbers
+    console.log(myModule.isPrime(3));
+    console.log(myModule.isPrime(5));
+
+````
+
+
+
+````
 // Function factory
 function Car () {
   var self = {

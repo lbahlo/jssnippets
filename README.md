@@ -131,6 +131,7 @@ function factorial(x){
 console.log(factorial(5))
 
 
+//GreatestCommonDivisor  start
 
 //Write a JavaScript program to find the greatest common divisor (gcd) of two positive 
 function greatedCommonDivisor(n1,n2,gcd) {
@@ -156,4 +157,7 @@ function greatedCommonDivisor(n1,n2,gcd) {
    //tests
    console.log(greatedCommonDivisor(4,8,1));
    console.log(greatedCommonDivisor(4,9,1));
+   
+   //GreatestCommonDivisor  end
+         
 ````

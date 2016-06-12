@@ -208,6 +208,48 @@ console.log(binarySearch([0,1,2,3,4,5,6], 4, 5,0 ));  //bad parms
 ````
 
 
+"Recursive: MergSort()"
+````
+
+function merge(left, right){
+  var result = [];
+ 
+    while (left.length && right.length) {
+        if (left[0] <= right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+ 
+    while (left.length)
+        result.push(left.shift());
+ 
+    while (right.length)
+        result.push(right.shift());
+ 
+    return result;
+}
+
+
+function mergeSort(items){
+
+    // Terminal case: 0 or 1 item arrays don't need sorting
+    if (items.length < 2) {
+        return items;
+    }
+
+    var middle = Math.floor(items.length / 2),
+        left    = items.slice(0, middle),
+        right   = items.slice(middle);
+
+    return merge(mergeSort(left), mergeSort(right));
+}
+  
+console.log(mergeSort([34,7,23,32,5,62]));
+```
+
+
 "GreatestCommonDivisor"
 ````
 //Write a JavaScript program to find the greatest common divisor (gcd) of two positive 

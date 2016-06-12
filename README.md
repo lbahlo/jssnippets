@@ -87,6 +87,44 @@ console.log(factorial(5))
 
 ````
 
+"Recursive:ArraySum"
+````
+//Write a JavaScript program to compute the sum of an array of integer
+function arraySum(values) {
+  //stop condition
+  if (values.length === 1){
+    return values[0];
+  }
+  else{
+    return values.pop() + arraySum(values);
+  }
+    
+}
+console.log(arraySum([1,2,3,4,5,6])); 
+````
+
+"Recursive exponent(n,power)"
+````
+// Write a JavaScript program to compute the exponent of a number
+//assumptions:  only positive numbers
+//tests : power of 0  ==> 1,  
+//        anyting to the negaive power is 1/antying to positive power
+function exponent(n,power) {
+  //stop
+  if (power <= 0) {
+    return 1
+  }
+  else {
+    return n * exponent(n,(power-1));
+  }
+    
+  
+}
+console.log(exponent(2,2));
+console.log(exponent(8,2));
+console.log(exponent(8,0));
+````
+
 
 "GreatestCommonDivisor"
 ````

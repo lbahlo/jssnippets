@@ -1,3 +1,8 @@
+// comands to update
+//C:\Lenna\Examples\jssnippets>git add README.md
+//C:\Lenna\Examples\jssnippets>git commit -m "c1"
+//C:\Lenna\Examples\jssnippets>git push -u origin master
+
 "# jssnippets" 
 
 ````
@@ -74,7 +79,7 @@ Start with a brute force solution, look for repeat work in that solution, and mo
 //Factoral(x) 
 
 function factorial(x){
-  if (x ===1){
+  if (x <= 0){
     return 1;
   }
   return x * factorial(x-1)  
@@ -118,11 +123,14 @@ function greatedCommonDivisor(n1,n2,gcd) {
 ````
 
 
+"Type of Errors"
 
+````
+JavaScript gives a message if it encounters an error. The recognized errors are –
 
-
-
-
+Load-time errors: The errors shown at the time of the page loading are counted under Load-time errors. These errors are encountered by the use of improper syntax, and thus are detected while the page is getting loaded.
+Run-time errors: This is the error that comes up while the program is running. It is caused by illegal operations, for example, division of a number by zero, or trying to access a non-existent area of the memory.
+Logic errors: It is caused by the use of syntactically correct code, which does not fulfill the required task. For example, an infinite loop.
 
 
 

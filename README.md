@@ -125,6 +125,60 @@ console.log(exponent(8,2));
 console.log(exponent(8,0));
 ````
 
+"Fibonacci(n)"
+````
+//Write a JavaScript program to get the first n Fibonacci numbers. Go to the editor
+//Note : The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, . . . Each subsequent
+//number is the sum of the previous two.
+//requirements
+// F0 = 0; F1 = 1; F2=1, F3=2, F4=3,F5=5, F6=8
+
+function Fibonacci(n){
+  
+   if (n === 0) { return 0;}
+   if (n === 1) {return 1;}
+   return Fibonacci(n-1) + Fibonacci(n-2);
+   
+  
+}
+
+console.log(Fibonacci(5));
+console.log(Fibonacci(10));
+console.log(Fibonacci(0));
+console.log(Fibonacci(1));
+console.log(Fibonacci(2));
+console.log(Fibonacci(3));
+console.log(Fibonacci(4));
+````
+"Recursive: isEven(n)"
+````
+//Write a JavaScript program to check whether a number is even or not.
+//Requirements
+// Return true if number is even else false
+// number is event if divisble by 2
+
+function isEven(n){
+  if (n < 0) { n=Math.abs(n);} //make positive
+  if ( n === 0)  {
+     return true;
+  }
+  else if (n === 1 ){
+    return false;
+  }
+  n = n-2;
+  return isEven(n);
+      
+}
+
+ console.log(isEven(0));
+ console.log(isEven(-7));
+ console.log(isEven(-8));
+ console.log(isEven(1));
+ console.log(isEven(2));
+ console.log(isEven(10));
+ console.log(isEven(100));
+````
+
 
 "GreatestCommonDivisor"
 ````

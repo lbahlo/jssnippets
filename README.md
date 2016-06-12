@@ -61,6 +61,28 @@ if (myArray instanceof Array) {
    // do something...
 }
 
+function is_number(value)  
+        {  
+        return !isNaN(value) && toString.call(value) === '[object Number]';  
+       }  
+  
+  function is_regexp(value)  
+        {  
+       return toString.call(value) === '[object RegExp]';  
+        } 
+
+
+To check type
+if( Object.prototype.toString.call( someVar ) === '[object Array]' ) {
+
+When the toString method is called, the following steps are taken:
+
+If the this value is undefined, return "[object Undefined]".
+If the this value is null, return "[object Null]".
+Let O be the result of calling ToObject passing the this value as the argument.
+Let class be the value of the [[Class]] internal property of O.
+Return the String value that is the result of concatenating the three Strings "[object ", class, and "]".
+
 ````
 
 ````

@@ -179,6 +179,34 @@ function isEven(n){
  console.log(isEven(100));
 ````
 
+"BinarySerach(values,target,start,end)"
+````
+// Write a JavaScript program for binary search. Go to the editor
+//Sample array : [0,1,2,3,4,5,6]
+//console.log(l.br_search(5)) will return '5' 
+// input array is sorted 
+// return -1 for invalid inputs
+// return the index of the target in values
+function findIndex(values, target){
+  return binarySearch(values, target,0, values.length-1)
+}
+
+function binarySearch(values, target,start,end){
+  if (start > end) {return -1;}
+  //get the mid point value
+  var midIndex = Math.floor(((start+end)/2));
+  var value = values[midIndex];
+  if (value > target) { return binarySearch(values, target, start, midIndex-1); }
+  if (value < target) { return binarySearch(values, target, midIndex+1, end); }
+  return midIndex; //found!
+                         
+}
+
+console.log(findIndex([0,1,2,3,4,5,6], 5));
+console.log(findIndex([0,1,2,3,4,5,6], 4));
+console.log(binarySearch([0,1,2,3,4,5,6], 4, 5,0 ));  //bad parms
+````
+
 
 "GreatestCommonDivisor"
 ````

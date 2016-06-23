@@ -71,6 +71,7 @@ function is_number(value)
        return toString.call(value) === '[object RegExp]';  
         } 
 
+````
 
 
 "Functional Programming design considerations"

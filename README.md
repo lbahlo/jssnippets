@@ -72,6 +72,16 @@ function is_number(value)
         } 
 
 
+````
+Functional Programming
+
+1. Are my functions dependent on the context in which they are called, or are they pure and independent?
+2. Can I write these functions in such a way that I could depend on them always returning the same result for a given input?
+3. Am I sure that my functions don't modify anyting outside of themselves?
+4. If I wanted to use these functions in antoher program, would I need ot make changes to them?
+
+````
+
 To check type
 if( Object.prototype.toString.call( someVar ) === '[object Array]' ) {
 

@@ -2,6 +2,7 @@
 "#  comands to pull and merge " 
 ````
 //C:\Lenna\Examples\jssnippets>git pull origin
+then can run commands below to udpate
 
 ````
 

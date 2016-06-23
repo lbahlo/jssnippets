@@ -1,4 +1,12 @@
 
+"#  comands to pull and merge " 
+````
+//C:\Lenna\Examples\jssnippets>git pull origin
+
+````
+
+
+
 "#  comands to updates" 
 ````
 //C:\Lenna\Examples\jssnippets>git add README.md

@@ -1,24 +1,6 @@
 Front-end Job Interview Questions
-This file contains a number of front-end interview questions that can be used when vetting potential candidates. It is by no means recommended to use every single question here on the same candidate (that would take hours). Choosing a few items from this list should help you vet the intended skills you require.
 
-Note: Keep in mind that many of these questions are open-ended and could lead to interesting discussions that tell you more about the person's capabilities than a straight answer would.
-
-Table of Contents
-
-General Questions
-HTML Questions
-CSS Questions
-JS Questions
-Testing Questions
-Performance Questions
-Network Questions
-Coding Questions
-Fun Questions
-Getting Involved
-
-Contributors
-How to Contribute
-License
+```
 General Questions:
 
 What did you learn yesterday/this week?
@@ -216,3 +198,4 @@ Who inspires you in the front-end community?
 Do you have any pet projects? What kind?
 What's your favorite feature of Internet Explorer?
 How do you like your coffee?
+````

@@ -1,403 +1,218 @@
-
-"# jssnippetsxx" 
-
-````
-//Title:
-//What
-//Requirmeents
-
-var myModule = (function() {
-     'use strict';
-      var vm = {};
-   
-      //public  
-      vm.XXX = XXX;   
-     
-      function XXX(....r) { 
-  
-          return yyy;
-
-       };
- 
-	    return vm;
-      
-    })();
-
-
-//Tests Edge cases "null, 0 negative, min, max"
-
-     var tests = myModule;
-     console.log(tests(...));  
-
-````
-
-"#  adding html element " 
-
-````
-
-<html> 
-<head> <title>t1</title> 
-
-<script type="text/javascript"> 
-function addNode() {
-     var newP = document.createElement("p"); 
-     var textNode = document.createTextNode(" This is a new text node");    
-     
-     newP.appendChild(textNode); document.getElementById("firstP").appendChild(newP);
- } 
-</script> </head> 
-
-<body> <p id="firstP">firstP<p> </body> 
-</html>
-
-````
-
-"#  Check if variable is array "
-
-````
-
-var myArray = [];
-if (myArray instanceof Array) {
-   // do something...
-}
-
-function is_number(value)  
-        {  
-        return !isNaN(value) && toString.call(value) === '[object Number]';  
-       }  
-  
-  function is_regexp(value)  
-        {  
-       return toString.call(value) === '[object RegExp]';  
-        } 
-
-````
-
-
-"Functional Programming design considerations"
-
-````
-
-1. Are my functions dependent on the context in which they are called, or are they pure and independent?
-2. Can I write these functions in such a way that I could depend on them always returning the same result for a given input?
-3. Am I sure that my functions don't modify anyting outside of themselves?
-4. If I wanted to use these functions in antoher program, would I need ot make changes to them?
-
-````
-
-````
-
-To check type
-if( Object.prototype.toString.call( someVar ) === '[object Array]' ) {
-
-When the toString method is called, the following steps are taken:
-
-If the this value is undefined, return "[object Undefined]".
-If the this value is null, return "[object Null]".
-Let O be the result of calling ToObject passing the this value as the argument.
-Let class be the value of the [[Class]] internal property of O.
-Return the String value that is the result of concatenating the three Strings "[object ", class, and "]".
-
-````
-
-````
-Goals
-Start with a brute force solution, look for repeat work in that solution, and modify it to only do that work once.
-
-````
-
-"Factoral(x)"
-
-````
-//Factoral(x) 
-
-function factorial(x){
-  if (x <= 0){
-    return 1;
-  }
-  return x * factorial(x-1)  
-  
-}
-
-console.log(factorial(5))
-
-
-````
-
-"Recursive:ArraySum"
-````
-//Write a JavaScript program to compute the sum of an array of integer
-function arraySum(values) {
-  //stop condition
-  if (values.length === 1){
-    return values[0];
-  }
-  else{
-    return values.pop() + arraySum(values);
-  }
-    
-}
-console.log(arraySum([1,2,3,4,5,6])); 
-````
-
-"Recursive exponent(n,power)"
-````
-// Write a JavaScript program to compute the exponent of a number
-//assumptions:  only positive numbers
-//tests : power of 0  ==> 1,  
-//        anyting to the negaive power is 1/antying to positive power
-function exponent(n,power) {
-  //stop
-  if (power <= 0) {
-    return 1
-  }
-  else {
-    return n * exponent(n,(power-1));
-  }
-    
-  
-}
-console.log(exponent(2,2));
-console.log(exponent(8,2));
-console.log(exponent(8,0));
-````
-
-"Fibonacci(n)"
-````
-//Write a JavaScript program to get the first n Fibonacci numbers. Go to the editor
-//Note : The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, . . . Each subsequent
-//number is the sum of the previous two.
-//requirements
-// F0 = 0; F1 = 1; F2=1, F3=2, F4=3,F5=5, F6=8
-
-function Fibonacci(n){
-  
-   if (n === 0) { return 0;}
-   if (n === 1) {return 1;}
-   return Fibonacci(n-1) + Fibonacci(n-2);
-   
-  
-}
-
-console.log(Fibonacci(5));
-console.log(Fibonacci(10));
-console.log(Fibonacci(0));
-console.log(Fibonacci(1));
-console.log(Fibonacci(2));
-console.log(Fibonacci(3));
-console.log(Fibonacci(4));
-````
-"Recursive: isEven(n)"
-````
-//Write a JavaScript program to check whether a number is even or not.
-//Requirements
-// Return true if number is even else false
-// number is event if divisble by 2
-
-function isEven(n){
-  if (n < 0) { n=Math.abs(n);} //make positive
-  if ( n === 0)  {
-     return true;
-  }
-  else if (n === 1 ){
-    return false;
-  }
-  n = n-2;
-  return isEven(n);
-      
-}
-
- console.log(isEven(0));
- console.log(isEven(-7));
- console.log(isEven(-8));
- console.log(isEven(1));
- console.log(isEven(2));
- console.log(isEven(10));
- console.log(isEven(100));
-````
-
-"BinarySerach(values,target,start,end)"
-````
-// Write a JavaScript program for binary search. Go to the editor
-//Sample array : [0,1,2,3,4,5,6]
-//console.log(l.br_search(5)) will return '5' 
-// input array is sorted 
-// return -1 for invalid inputs
-// return the index of the target in values
-function findIndex(values, target){
-  return binarySearch(values, target,0, values.length-1)
-}
-
-function binarySearch(values, target,start,end){
-  if (start > end) {return -1;}
-  //get the mid point value
-  var midIndex = Math.floor(((start+end)/2));
-  var value = values[midIndex];
-  if (value > target) { return binarySearch(values, target, start, midIndex-1); }
-  if (value < target) { return binarySearch(values, target, midIndex+1, end); }
-  return midIndex; //found!
-                         
-}
-
-console.log(findIndex([0,1,2,3,4,5,6], 5));
-console.log(findIndex([0,1,2,3,4,5,6], 4));
-console.log(binarySearch([0,1,2,3,4,5,6], 4, 5,0 ));  //bad parms
-````
-
-
-"Recursive: MergSort()"
-````
-
-function merge(left, right){
-  var result = [];
- 
-    while (left.length && right.length) {
-        if (left[0] <= right[0]) {
-            result.push(left.shift());
-        } else {
-            result.push(right.shift());
-        }
-    }
- 
-    while (left.length)
-        result.push(left.shift());
- 
-    while (right.length)
-        result.push(right.shift());
- 
-    return result;
-}
-
-
-function mergeSort(items){
-
-    // Terminal case: 0 or 1 item arrays don't need sorting
-    if (items.length < 2) {
-        return items;
-    }
-
-    var middle = Math.floor(items.length / 2),
-        left    = items.slice(0, middle),
-        right   = items.slice(middle);
-
-    return merge(mergeSort(left), mergeSort(right));
-}
-  
-console.log(mergeSort([34,7,23,32,5,62]));
-```
-
-
-"GreatestCommonDivisor"
-````
-//Write a JavaScript program to find the greatest common divisor (gcd) of two positive 
-function greatedCommonDivisor(n1,n2,gcd) {
- 
-    var x = Math.min(n1,n2);
-    if ( gcd === Math.min(n1,n2) ) {
-       return gcd;
-    }
-    
-    var posGcd = gcd+1; 
-   
-    while (posGcd <= Math.min(n1,n2) ) {
-      if (  (n1 % posGcd) === 0 && (n2 % posGcd) === 0 ) {
-          gcd = posGcd;
-          greatedCommonDivisor(n1,n2,gcd);
-      }   
-      
-      posGcd++;
-    }
-    
-    return gcd; 
-}
-   //tests
-   console.log(greatedCommonDivisor(4,8,1));
-   console.log(greatedCommonDivisor(4,9,1));
-   
-         
-````
-
-
-"Type of Errors"
-
-````
-JavaScript gives a message if it encounters an error. The recognized errors are –
-
-Load-time errors: The errors shown at the time of the page loading are counted under Load-time errors. These errors are encountered by the use of improper syntax, and thus are detected while the page is getting loaded.
-Run-time errors: This is the error that comes up while the program is running. It is caused by illegal operations, for example, division of a number by zero, or trying to access a non-existent area of the memory.
-Logic errors: It is caused by the use of syntactically correct code, which does not fulfill the required task. For example, an infinite loop.
-
-
-
-
-````
-//module/function name
-
-//What are you testing? 
-//requirements (e.g.)
-// Prime ==> Number can be divded by 1 and self only
-// 0 is not Prime
-// 1 is not Prime
-// negative numbers are not prime
-
-//What Should it do?  -  if given input is a prime number return true else false
-//What is the Actual Output
-//What is the Execptec Output  - True or False
-
-
-var myModule = (function() {
-     'use strict';
-      var vm = {};
-   
-      //public  
-      vm.isPrime = isPrime;   
-     
-      function isPrime(number) { 
-  
-          return xxx;
-
-       };
- 
-	    return vm;
-      
-    })();
-    
-    
-    //tests
-
-     var tests = myModule;
-    
-   
-    //edge cases
-    console.log(tests.isPrime(0));  
-    console.log(tests.isPrime(-1));
-    
-    //non prim numbers
-    console.log(tests.isPrime(4));
-    console.log(tests.isPrime(6.789));
-    
-    //prime numbers
-    console.log(tests.isPrime(3));
- //   console.log(myModule().isPrime(5));
-     debugger
-    console.log(myModule.isPrime(5));
-
-````
-
-
-````
-// Function factory
-function Car () {
-  var self = {
-    make: 'Honda',
-    model: 'Accord',
-    color: '#cc0000',
-    paint: function(color){
-      self.color = color;
-    }
-  };
-  return self;
-}
- 
-var myCar = Car();
-````
+Front-end Job Interview Questions
+This file contains a number of front-end interview questions that can be used when vetting potential candidates. It is by no means recommended to use every single question here on the same candidate (that would take hours). Choosing a few items from this list should help you vet the intended skills you require.
+
+Note: Keep in mind that many of these questions are open-ended and could lead to interesting discussions that tell you more about the person's capabilities than a straight answer would.
+
+Table of Contents
+
+General Questions
+HTML Questions
+CSS Questions
+JS Questions
+Testing Questions
+Performance Questions
+Network Questions
+Coding Questions
+Fun Questions
+Getting Involved
+
+Contributors
+How to Contribute
+License
+General Questions:
+
+What did you learn yesterday/this week?
+What excites or interests you about coding?
+What is a recent technical challenge you experienced and how did you solve it?
+What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+Talk about your preferred development environment.
+Which version control systems are you familiar with?
+Can you describe your workflow when you create a web page?
+If you have 5 different stylesheets, how would you best integrate them into the site?
+Can you describe the difference between progressive enhancement and graceful degradation?
+How would you optimize a website's assets/resources?
+How many resources will a browser download from a given domain at a time?
+What are the exceptions?
+Name 3 ways to decrease page load (perceived or actual load time).
+If you jumped on a project and they used tabs and you used spaces, what would you do?
+Describe how you would create a simple slideshow page.
+If you could master one technology this year, what would it be?
+Explain the importance of standards and standards bodies.
+What is Flash of Unstyled Content? How do you avoid FOUC?
+Explain what ARIA and screenreaders are, and how to make a website accessible.
+Explain some of the pros and cons for CSS animations versus JavaScript animations.
+What does CORS stand for and what issue does it address?
+HTML Questions:
+
+What does a doctype do?
+What's the difference between full standards mode, almost standards mode and quirks mode?
+What's the difference between HTML and XHTML?
+Are there any problems with serving pages as application/xhtml+xml?
+How do you serve a page with content in multiple languages?
+What kind of things must you be wary of when design or developing for multilingual sites?
+What are data- attributes good for?
+Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+Describe the difference between a cookie, sessionStorage and localStorage.
+Describe the difference between <script>, <script async> and <script defer>.
+Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+What is progressive rendering?
+Have you used different HTML templating languages before?
+CSS Questions:
+
+What is the difference between classes and IDs in CSS?
+What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+Describe Floats and how they work.
+Describe z-index and how stacking context is formed.
+Describe BFC(Block Formatting Context) and how it works.
+What are the various clearing techniques and which is appropriate for what context?
+Explain CSS sprites, and how you would implement them on a page or site.
+What are your favourite image replacement techniques and which do you use when?
+How would you approach fixing browser-specific styling issues?
+How do you serve your pages for feature-constrained browsers?
+What techniques/processes do you use?
+What are the different ways to visually hide content (and make it available only for screen readers)?
+Have you ever used a grid system, and if so, what do you prefer?
+Have you used or implemented media queries or mobile specific layouts/CSS?
+Are you familiar with styling SVG?
+How do you optimize your webpages for print?
+What are some of the "gotchas" for writing efficient CSS?
+What are the advantages/disadvantages of using CSS preprocessors?
+Describe what you like and dislike about the CSS preprocessors you have used.
+How would you implement a web design comp that uses non-standard fonts?
+Explain how a browser determines what elements match a CSS selector.
+Describe pseudo-elements and discuss what they are used for.
+Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+What does * { box-sizing: border-box; } do? What are its advantages?
+List as many values for the display property that you can remember.
+What's the difference between inline and inline-block?
+What's the difference between a relative, fixed, absolute and statically positioned element?
+The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
+What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+Have you played around with the new CSS Flexbox or Grid specs?
+How is responsive design different from adaptive design?
+Have you ever worked with retina graphics? If so, when and what techniques did you use?
+Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?
+JS Questions:
+
+Explain event delegation
+Explain how this works in JavaScript
+Explain how prototypal inheritance works
+What do you think of AMD vs CommonJS?
+Explain why the following doesn't work as an IIFE: function foo(){ }();.
+What needs to be changed to properly make it an IIFE?
+What's the difference between a variable that is: null, undefined or undeclared?
+How would you go about checking for any of these states?
+What is a closure, and how/why would you use one?
+What's a typical use case for anonymous functions?
+How do you organize your code? (module pattern, classical inheritance?)
+What's the difference between host objects and native objects?
+Difference between: function Person(){}, var person = Person(), and var person = new Person()?
+What's the difference between .call and .apply?
+Explain Function.prototype.bind.
+When would you use document.write()?
+What's the difference between feature detection, feature inference, and using the UA string?
+Explain Ajax in as much detail as possible.
+What are the advantages and disadvantages of using Ajax?
+Explain how JSONP works (and how it's not really Ajax).
+Have you ever used JavaScript templating?
+If so, what libraries have you used?
+Explain "hoisting".
+Describe event bubbling.
+What's the difference between an "attribute" and a "property"?
+Why is extending built-in JavaScript objects not a good idea?
+Difference between document load event and document DOMContentLoaded event?
+What is the difference between == and ===?
+Explain the same-origin policy with regards to JavaScript.
+Make this work:
+duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+Why is it called a Ternary expression, what does the word "Ternary" indicate?
+What is "use strict";? what are the advantages and disadvantages to using it?
+Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
+Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+Why would you use something like the load event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+Explain what a single page app is and how to make one SEO-friendly.
+What is the extent of your experience with Promises and/or their polyfills?
+What are the pros and cons of using Promises instead of callbacks?
+What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+What tools and techniques do you use debugging JavaScript code?
+What language constructions do you use for iterating over object properties and array items?
+Explain the difference between mutable and immutable objects.
+What is an example of an immutable object in JavaScript?
+What are the pros and cons of immutability?
+How can you achieve immutability in your own code?
+Explain the difference between synchronous and asynchronous functions.
+What is event loop?
+What is the difference between call stack and task queue?
+Explain the differences on the usage of foo between function foo() {} and var foo = function() {}
+Testing Questions:
+
+What are some advantages/disadvantages to testing your code?
+What tools would you use to test your code's functionality?
+What is the difference between a unit test and a functional/integration test?
+What is the purpose of a code style linting tool?
+Performance Questions:
+
+What tools would you use to find a performance bug in your code?
+What are some ways you may improve your website's scrolling performance?
+Explain the difference between layout, painting and compositing.
+Network Questions:
+
+Traditionally, why has it been better to serve site assets from multiple domains?
+Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+What are the differences between Long-Polling, Websockets and Server-Sent Events?
+Explain the following request and response headers:
+Diff. between Expires, Date, Age and If-Modified-...
+Do Not Track
+Cache-Control
+Transfer-Encoding
+ETag
+X-Frame-Options
+What are HTTP methods? List all HTTP methods that you know, and explain them.
+Coding Questions:
+
+Question: What is the value of foo?
+
+var foo = 10 + '20';
+Question: How would you make this work?
+
+add(2, 5); // 7
+add(2)(5); // 7
+Question: What value is returned from the following statement?
+
+"i'm a lasagna hog".split("").reverse().join("");
+Question: What is the value of window.foo?
+
+( window.foo || ( window.foo = "bar" ) );
+Question: What is the outcome of the two alerts below?
+
+var foo = "Hello";
+(function() {
+  var bar = " World";
+  alert(foo + bar);
+})();
+alert(foo + bar);
+Question: What is the value of foo.length?
+
+var foo = [];
+foo.push(1);
+foo.push(2);
+Question: What is the value of foo.x?
+
+var foo = {n: 1};
+var bar = foo;
+foo.x = foo = {n: 2};
+Question: What does the following code print?
+
+console.log('one');
+setTimeout(function() {
+  console.log('two');
+}, 0);
+console.log('three');
+Fun Questions:
+
+What's a cool project that you've recently worked on?
+What are some things you like about the developer tools you use?
+Who inspires you in the front-end community?
+Do you have any pet projects? What kind?
+What's your favorite feature of Internet Explorer?
+How do you like your coffee?

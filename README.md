@@ -1,5 +1,8 @@
 
-"# jssnippetsxx" 
+<script async src="//jsfiddle.net/lbahlo/zas04ssm/embed/"></script>
+
+
+"# jssnippetsxx"
 
 ````
 //Title:
@@ -9,18 +12,18 @@
 var myModule = (function() {
      'use strict';
       var vm = {};
-   
+
       //public  
       vm.XXX = XXX;   
-     
-      function XXX(....r) { 
-  
+
+      function XXX(....r) {
+
           return yyy;
 
        };
- 
+
 	    return vm;
-      
+
     })();
 
 
@@ -31,23 +34,23 @@ var myModule = (function() {
 
 ````
 
-"#  adding html element " 
+"#  adding html element "
 
 ````
 
-<html> 
-<head> <title>t1</title> 
+<html>
+<head> <title>t1</title>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 function addNode() {
-     var newP = document.createElement("p"); 
+     var newP = document.createElement("p");
      var textNode = document.createTextNode(" This is a new text node");    
-     
-     newP.appendChild(textNode); document.getElementById("firstP").appendChild(newP);
- } 
-</script> </head> 
 
-<body> <p id="firstP">firstP<p> </body> 
+     newP.appendChild(textNode); document.getElementById("firstP").appendChild(newP);
+ }
+</script> </head>
+
+<body> <p id="firstP">firstP<p> </body>
 </html>
 
 ````
@@ -65,11 +68,11 @@ function is_number(value)
         {  
         return !isNaN(value) && toString.call(value) === '[object Number]';  
        }  
-  
+
   function is_regexp(value)  
         {  
        return toString.call(value) === '[object RegExp]';  
-        } 
+        }
 
 ````
 
@@ -109,14 +112,14 @@ Start with a brute force solution, look for repeat work in that solution, and mo
 "Factoral(x)"
 
 ````
-//Factoral(x) 
+//Factoral(x)
 
 function factorial(x){
   if (x <= 0){
     return 1;
   }
   return x * factorial(x-1)  
-  
+
 }
 
 console.log(factorial(5))
@@ -135,9 +138,9 @@ function arraySum(values) {
   else{
     return values.pop() + arraySum(values);
   }
-    
+
 }
-console.log(arraySum([1,2,3,4,5,6])); 
+console.log(arraySum([1,2,3,4,5,6]));
 ````
 
 "Recursive exponent(n,power)"
@@ -154,8 +157,8 @@ function exponent(n,power) {
   else {
     return n * exponent(n,(power-1));
   }
-    
-  
+
+
 }
 console.log(exponent(2,2));
 console.log(exponent(8,2));
@@ -171,12 +174,12 @@ console.log(exponent(8,0));
 // F0 = 0; F1 = 1; F2=1, F3=2, F4=3,F5=5, F6=8
 
 function Fibonacci(n){
-  
+
    if (n === 0) { return 0;}
    if (n === 1) {return 1;}
    return Fibonacci(n-1) + Fibonacci(n-2);
-   
-  
+
+
 }
 
 console.log(Fibonacci(5));
@@ -204,7 +207,7 @@ function isEven(n){
   }
   n = n-2;
   return isEven(n);
-      
+
 }
 
  console.log(isEven(0));
@@ -220,8 +223,8 @@ function isEven(n){
 ````
 // Write a JavaScript program for binary search. Go to the editor
 //Sample array : [0,1,2,3,4,5,6]
-//console.log(l.br_search(5)) will return '5' 
-// input array is sorted 
+//console.log(l.br_search(5)) will return '5'
+// input array is sorted
 // return -1 for invalid inputs
 // return the index of the target in values
 function findIndex(values, target){
@@ -236,7 +239,7 @@ function binarySearch(values, target,start,end){
   if (value > target) { return binarySearch(values, target, start, midIndex-1); }
   if (value < target) { return binarySearch(values, target, midIndex+1, end); }
   return midIndex; //found!
-                         
+
 }
 
 console.log(findIndex([0,1,2,3,4,5,6], 5));
@@ -250,7 +253,7 @@ console.log(binarySearch([0,1,2,3,4,5,6], 4, 5,0 ));  //bad parms
 
 function merge(left, right){
   var result = [];
- 
+
     while (left.length && right.length) {
         if (left[0] <= right[0]) {
             result.push(left.shift());
@@ -258,13 +261,13 @@ function merge(left, right){
             result.push(right.shift());
         }
     }
- 
+
     while (left.length)
         result.push(left.shift());
- 
+
     while (right.length)
         result.push(right.shift());
- 
+
     return result;
 }
 
@@ -282,39 +285,39 @@ function mergeSort(items){
 
     return merge(mergeSort(left), mergeSort(right));
 }
-  
+
 console.log(mergeSort([34,7,23,32,5,62]));
 ```
 
 
 "GreatestCommonDivisor"
 ````
-//Write a JavaScript program to find the greatest common divisor (gcd) of two positive 
+//Write a JavaScript program to find the greatest common divisor (gcd) of two positive
 function greatedCommonDivisor(n1,n2,gcd) {
- 
+
     var x = Math.min(n1,n2);
     if ( gcd === Math.min(n1,n2) ) {
        return gcd;
     }
-    
-    var posGcd = gcd+1; 
-   
+
+    var posGcd = gcd+1;
+
     while (posGcd <= Math.min(n1,n2) ) {
       if (  (n1 % posGcd) === 0 && (n2 % posGcd) === 0 ) {
           gcd = posGcd;
           greatedCommonDivisor(n1,n2,gcd);
       }   
-      
+
       posGcd++;
     }
-    
-    return gcd; 
+
+    return gcd;
 }
    //tests
    console.log(greatedCommonDivisor(4,8,1));
    console.log(greatedCommonDivisor(4,9,1));
-   
-         
+
+
 ````
 
 
@@ -333,7 +336,7 @@ Logic errors: It is caused by the use of syntactically correct code, which does 
 ````
 //module/function name
 
-//What are you testing? 
+//What are you testing?
 //requirements (e.g.)
 // Prime ==> Number can be divded by 1 and self only
 // 0 is not Prime
@@ -348,34 +351,34 @@ Logic errors: It is caused by the use of syntactically correct code, which does 
 var myModule = (function() {
      'use strict';
       var vm = {};
-   
+
       //public  
       vm.isPrime = isPrime;   
-     
-      function isPrime(number) { 
-  
+
+      function isPrime(number) {
+
           return xxx;
 
        };
- 
+
 	    return vm;
-      
+
     })();
-    
-    
+
+
     //tests
 
      var tests = myModule;
-    
-   
+
+
     //edge cases
     console.log(tests.isPrime(0));  
     console.log(tests.isPrime(-1));
-    
+
     //non prim numbers
     console.log(tests.isPrime(4));
     console.log(tests.isPrime(6.789));
-    
+
     //prime numbers
     console.log(tests.isPrime(3));
  //   console.log(myModule().isPrime(5));
@@ -398,6 +401,6 @@ function Car () {
   };
   return self;
 }
- 
+
 var myCar = Car();
 ````

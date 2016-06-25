@@ -11,10 +11,25 @@ Talk about your preferred development environment.
 Which version control systems are you familiar with?
 Can you describe your workflow when you create a web page?
 If you have 5 different stylesheets, how would you best integrate them into the site?
+
+
 Can you describe the difference between progressive enhancement and graceful degradation?
+       https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement
+
+
 How would you optimize a website's assets/resources?
+       https://developer.yahoo.com/performance/rules.html
+       
+       https://www.sitepoint.com/web-site-optimization-steps/
+
+       http://insights.dice.com/2013/09/20/front-end-engineer/
+
+       
 How many resources will a browser download from a given domain at a time?
+    2 to 6, depends on browser, how configured
+
 What are the exceptions?
+
 Name 3 ways to decrease page load (perceived or actual load time).
 If you jumped on a project and they used tabs and you used spaces, what would you do?
 Describe how you would create a simple slideshow page.
@@ -42,6 +57,7 @@ Have you used different HTML templating languages before?
 CSS Questions:
 
 What is the difference between classes and IDs in CSS?
+
 What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 Describe Floats and how they work.
 Describe z-index and how stacking context is formed.

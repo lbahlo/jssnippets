@@ -3,21 +3,20 @@ Front-end Job Interview Questions
 ```
 General Questions:
 
-What did you learn yesterday/this week?
-What excites or interests you about coding?
-What is a recent technical challenge you experienced and how did you solve it?
-What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
-Talk about your preferred development environment.
-Which version control systems are you familiar with?
-Can you describe your workflow when you create a web page?
-If you have 5 different stylesheets, how would you best integrate them into the site?
+1. What did you learn yesterday/this week?
+2. What excites or interests you about coding?
+3. What is a recent technical challenge you experienced and how did you solve it?
+4. What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+5. Talk about your preferred development environment.
+6. Which version control systems are you familiar with?
+7. Can you describe your workflow when you create a web page?
+8. If you have 5 different stylesheets, how would you best integrate them into the site?
 
-
-Can you describe the difference between progressive enhancement and graceful degradation?
+9. Can you describe the difference between progressive enhancement and graceful degradation?
        https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement
 
 
-How would you optimize a website's assets/resources?
+10. How would you optimize a website's assets/resources?
        https://developer.yahoo.com/performance/rules.html
 
        https://www.sitepoint.com/web-site-optimization-steps/
@@ -25,38 +24,45 @@ How would you optimize a website's assets/resources?
        http://insights.dice.com/2013/09/20/front-end-engineer/
 
 
-How many resources will a browser download from a given domain at a time?
+11. How many resources will a browser download from a given domain at a time?
     2 to 6, depends on browser, how configured
 
-What are the exceptions?
+12. What are the exceptions?
 
-Name 3 ways to decrease page load (perceived or actual load time).
-If you jumped on a project and they used tabs and you used spaces, what would you do?
-Describe how you would create a simple slideshow page.
-If you could master one technology this year, what would it be?
-Explain the importance of standards and standards bodies.
-What is Flash of Unstyled Content? How do you avoid FOUC?
-Explain what ARIA and screenreaders are, and how to make a website accessible.
-Explain some of the pros and cons for CSS animations versus JavaScript animations.
-What does CORS stand for and what issue does it address?
+13. Name 3 ways to decrease page load (perceived or actual load time).
+
+14. If you jumped on a project and they used tabs and you used spaces, what would you do?
+15. Describe how you would create a simple slideshow page.
+16. If you could master one technology this year, what would it be?
+    REACT,  rxjs Observables
+
+17. Explain the importance of standards and standards bodies.
+18. What is Flash of Unstyled Content? How do you avoid FOUC?
+19. Explain what ARIA and screenreaders are, and how to make a website accessible.
+20. Explain some of the pros and cons for CSS animations versus JavaScript animations.
+21. What does CORS stand for and what issue does it address?
+
+
 HTML Questions:
 
-What does a doctype do?
-What's the difference between full standards mode, almost standards mode and quirks mode?
-What's the difference between HTML and XHTML?
-Are there any problems with serving pages as application/xhtml+xml?
-How do you serve a page with content in multiple languages?
-What kind of things must you be wary of when design or developing for multilingual sites?
-What are data- attributes good for?
-Consider HTML5 as an open web platform. What are the building blocks of HTML5?
-Describe the difference between a cookie, sessionStorage and localStorage.
-Describe the difference between <script>, <script async> and <script defer>.
-Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
-What is progressive rendering?
-Have you used different HTML templating languages before?
+1. What does a doctype do?
+2. What's the difference between full standards mode, almost standards mode and quirks mode?
+3. What's the difference between HTML and XHTML?
+4. Are there any problems with serving pages as application/xhtml+xml?
+5. How do you serve a page with content in multiple languages?
+6. What kind of things must you be wary of when design or developing for multilingual sites?
+7. What are data- attributes good for?
+8. Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+9. Describe the difference between a cookie, sessionStorage and localStorage.
+10. Describe the difference between <script>, <script async> and <script defer>.
+11. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+12. What is progressive rendering?
+13. Have you used different HTML templating languages before?
+
+
 CSS Questions:
 
-What is the difference between classes and IDs in CSS?
+1. What is the difference between classes and IDs in CSS?
     Use a class when you want to consistently style multiple elements throughout the page/site. Classes are useful when you have, or possibly will have in the future, more than one element that shares the same style. An example may be a div of "comments" or a certain list style to use for related links.
 
     Additionally, a given element can have more than one class associated with it, while an element can only have one id. For example, you can give a div two classes whose styles will both take effect.
@@ -69,130 +75,365 @@ What is the difference between classes and IDs in CSS?
     Examples of ids are: main-content, header, footer, or left-sidebar.
     A good way to remember this is a class is a type of item and the id is the unique name of an item on the page.
 
-What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
-Describe Floats and how they work.
-Describe z-index and how stacking context is formed.
-Describe BFC(Block Formatting Context) and how it works.
-What are the various clearing techniques and which is appropriate for what context?
-Explain CSS sprites, and how you would implement them on a page or site.
+2. What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+
+    The main differences are:
+
+    Normalize.css preserves useful defaults rather than "unstyling" everything. For example, elements like sup or sub "just work" after including normalize.css (and are actually made more robust) whereas they are visually indistinguishable from normal text after including reset.css. So, normalize.css does not impose a visual starting point (homogeny) upon you. This may not be to everyone's taste. The best thing to do is experiment with both and see which gels with your preferences.
+
+    Normalize.css corrects some common bugs that are out of scope for reset.css. It has a wider scope than reset.css, and also provides bug fixes for common problems like: display settings for HTML5 elements, the lack of font inheritance by form elements, correcting font-size rendering for pre, SVG overflow in IE9, and the button styling bug in iOS.
+
+    Normalize.css doesn't clutter your dev tools. A common irritation when using reset.css is the large inheritance chain that is displayed in browser CSS debugging tools. This is not such an issue with normalize.css because of the targeted stylings.
+
+    Normalize.css is more modular. The project is broken down into relatively independent sections, making it easy for you to potentially remove sections (like the form normalizations) if you know they will never be needed by your website.
+
+    Normalize.css has better documentation. The normalize.css code is documented inline as well as more comprehensively in the GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements by default, and make it easier for them to be involved in submitting improvements.
+    I've written in greater detail about this in an article about normalize.css
+
+
+
+3. Describe Floats and how they work.
+  The float CSS property specifies that an element should be taken from the normal flow and placed along the left or right side of its container, where text and inline elements will wrap around it.
+
+4. Describe z-index and how stacking context is formed.
+
+    Positioning and assigning a z-index value to an HTML element creates a stacking context, (as does assigning non-full opacity).
+    Stacking contexts can be contained in other stacking contexts, and together create a hierarchy of stacking contexts.
+    Each stacking context is completely independent from its siblings: only descendant elements are considered when stacking is processed.
+    Each stacking context is self-contained: after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context.
+
+
+5. Describe BFC(Block Formatting Context) and how it works.
+
+A block formatting context is a part of a visual CSS rendering of a Web page. It is the region in which the layout of block boxes occurs and in which floats interact with each other.
+
+A block formatting context is created by one of the following:
+
+    the root element or something that contains it
+    floats (elements where float is not none)
+    absolutely positioned elements (elements where position is absolute or fixed)
+    inline-blocks (elements with display: inline-block)
+    table cells (elements with display: table-cell, which is the default for HTML table cells)
+    table captions (elements with display: table-caption, which is the default for HTML table captions)
+    elements where overflow has a value other than visible
+    flex boxes (elements with display: flex or inline-flex)
+
+6. What are the various clearing techniques and which is appropriate for what context?
+
+    clear:both;
+    overflow: hidden;
+    height: auto;
+
+
+7. Explain CSS sprites, and how you would implement them on a page or site.
+
 What are your favourite image replacement techniques and which do you use when?
 How would you approach fixing browser-specific styling issues?
 How do you serve your pages for feature-constrained browsers?
 What techniques/processes do you use?
 What are the different ways to visually hide content (and make it available only for screen readers)?
 Have you ever used a grid system, and if so, what do you prefer?
-Have you used or implemented media queries or mobile specific layouts/CSS?
-Are you familiar with styling SVG?
-How do you optimize your webpages for print?
-What are some of the "gotchas" for writing efficient CSS?
-What are the advantages/disadvantages of using CSS preprocessors?
-Describe what you like and dislike about the CSS preprocessors you have used.
-How would you implement a web design comp that uses non-standard fonts?
-Explain how a browser determines what elements match a CSS selector.
-Describe pseudo-elements and discuss what they are used for.
-Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
-What does * { box-sizing: border-box; } do? What are its advantages?
-List as many values for the display property that you can remember.
-What's the difference between inline and inline-block?
-What's the difference between a relative, fixed, absolute and statically positioned element?
-The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
-What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
-Have you played around with the new CSS Flexbox or Grid specs?
-How is responsive design different from adaptive design?
-Have you ever worked with retina graphics? If so, when and what techniques did you use?
-Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?
+    jqWidgets - grid jqxGrid
+    AgGrid -
+
+8. Have you used or implemented media queries or mobile specific layouts/CSS?
+   used them never generated one from scratch
+
+9. Are you familiar with styling SVG?
+   d3.js
+   simple canvas
+
+10. How do you optimize your webpages for print?
+  I have not had to support printing yet using javascript.  Would research, get needed info and then implement.
+
+11. What are some of the "gotchas" for writing efficient CSS?
+
+12. What are the advantages/disadvantages of using CSS preprocessors?
+
+13. Describe what you like and dislike about the CSS preprocessors you have used.
+
+14. How would you implement a web design comp that uses non-standard fonts?
+
+15. Explain how a browser determines what elements match a CSS selector.
+  Reads right-to-left
+  Check matching elements for the key(right-most) selector
+  Check if the elements are matching parents for the next selectors
+
+16. Describe pseudo-elements and discuss what they are used for.
+    A CSS pseudo-element is used to style specified parts of an element. (e.g. first line of test in <p> or first letter)
+    All pseudo-elements
+      ::after
+      ::before
+      ::first-letter
+      ::first-line
+      ::selection
+      ::backdrop
+      ::placeholder
+      ::marker
+      ::spelling-error
+      ::grammar-error
+
+17. Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+
+18. What does * { box-sizing: border-box; } do? What are its advantages?
+
+19. List as many values for the display property that you can remember.
+
+20. What's the difference between inline and inline-block?
+
+21. What's the difference between a relative, fixed, absolute and statically positioned element?
+
+22. The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
+
+23.What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+   bootstrap, ionic css framework,
+
+24.Have you played around with the new CSS Flexbox or Grid specs?
+
+    Yes. - Flex Container Flex Item properties
+
+      http://flexboxfroggy.com
+      https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties
+
+25.How is responsive design different from adaptive design?
+    Responsive websites respond to the size of the browser at any given point.
+
+    Adaptive websites adapt to the width of the browser at a specific points. In other words, the website is only concerned about the browser being a specific width, at which point it adapts the layout.
+
+    Another way to think about it is the difference between smooth and snap design. Responsive design is smooth because the layout fluidly adjusts regardless of what device it is viewed on. Adaptive design, on the other hand, snaps into place because the page is serving something different because of the browser or device it is viewed on. This animation illustrates the difference in behavior:
+
+26. Have you ever worked with retina graphics? If so, when and what techniques did you use?
+  no.
+  The CSS method is great for background images, but for inline images in your HTML you’ll have to modify the <img> tag. Simply add the @2x image to the source attribute, then use width and height to scale it to the original dimensions.
+
+27. Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?
+
+  if view was fixed size, static, positions not relative, never needing to resize - absolute
+  Any control that needs to resize, Responsive or Adpative views, write once target multiple platforms .... translate()
+
+
 JS Questions:
 
-Explain event delegation
-Explain how this works in JavaScript
-Explain how prototypal inheritance works
-What do you think of AMD vs CommonJS?
-Explain why the following doesn't work as an IIFE: function foo(){ }();.
-What needs to be changed to properly make it an IIFE?
-What's the difference between a variable that is: null, undefined or undeclared?
-How would you go about checking for any of these states?
-What is a closure, and how/why would you use one?
-What's a typical use case for anonymous functions?
-How do you organize your code? (module pattern, classical inheritance?)
-What's the difference between host objects and native objects?
-Difference between: function Person(){}, var person = Person(), and var person = new Person()?
-What's the difference between .call and .apply?
-Explain Function.prototype.bind.
-When would you use document.write()?
-What's the difference between feature detection, feature inference, and using the UA string?
-Explain Ajax in as much detail as possible.
-What are the advantages and disadvantages of using Ajax?
-Explain how JSONP works (and how it's not really Ajax).
-Have you ever used JavaScript templating?
-If so, what libraries have you used?
-Explain "hoisting".
-Describe event bubbling.
-What's the difference between an "attribute" and a "property"?
-Why is extending built-in JavaScript objects not a good idea?
-Difference between document load event and document DOMContentLoaded event?
-What is the difference between == and ===?
-Explain the same-origin policy with regards to JavaScript.
+1. Explain event delegation
+    Add the event to a parent element and when a child element is clicked the event will bubble up to parent which will trigger the event for the child.  event will containe the child element user clicked on.
+
+    Simple:  when the event bubbles up to the UL element, you check the event object's target property to gain a reference to the actual clicked node.  Here's a very basic JavaScript snippet which illustrates event delegation:
+
+    // Get the element, add a click listener...
+    document.getElementById("parent-list").addEventListener("click", function(e) {
+    // e.target is the clicked element!
+    // If it was a list item
+    if(e.target && e.target.nodeName == "LI") {
+      // List item found!  Output the ID!
+      console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+    }
+    });
+
+2. Explain how this works in JavaScript
+
+    Event bubbling provides the foundation for event delegation in browsers.
+
+    The event is dispatched to its target  EventTarget and any event listeners found there are triggered. Bubbling events will then trigger any additional event listeners found by following the EventTarget's parent chain upward, checking for any event listeners registered on each successive EventTarget. This upward propagation will continue up to and including the Document.
+
+3. Explain how prototypal inheritance works
+
+    In a nutshell, prototypal inheritance is when an object inherits from another object. This differs from classical inheritance, in which a class inherits from another class.
+
+    e.g. var male = Object.create(human)  //object male inheriting from object human
+
+    Other ways JS supports inheritance
+
+        Pseudoclassical
+        A pattern which uses a  constructor and the new operator, combined with a prototype added to the constructor.
+
+        Functional (by Douglas Crockford)
+        This pattern allows one object to inherit from another, take the result and augment it the child level to achieve inheritance.  You create an object as your parent, pass the child object to the parent to inheritt/apply its properties and returns the resulting object back to the child who can then augment its own properties to the object returned from the parent.
+        //parent object
+        var human = function(name {
+             var self = {};
+             self.name = name || '';
+             ...
+             return self;
+         }
+         var male = function(name){
+            var self = human(name);
+            self.gender = "Male";
+            return self;
+          }
+          var female = function(name){
+            var self = human(name);
+            self.gender = "Female";
+            return self;
+          }
+          var bob = male("Bob");
+          var lenna = female("Lenna");
+          console.log("lenna is a " + lenna.gender)
+
+
+4. What do you think of AMD vs CommonJS?
+
+5. Explain why the following doesn't work as an IIFE: function foo(){ }();.
+
+6. What needs to be changed to properly make it an IIFE?
+
+    The most widely accepted way to tell the parser to expect a function expression is just to wrap in in parens, because in JavaScript, parens can’t contain statements. At this point, when the parser encounters the function keyword, it knows to parse it as a function expression and not a function declaration.
+
+7. What's the difference between a variable that is: null, undefined or undeclared?
+
+8. How would you go about checking for any of these states?
+
+9. What is a closure, and how/why would you use one?
+
+10. What's a typical use case for anonymous functions?
+
+11. How do you organize your code? (module pattern, classical inheritance?)
+   Module pattern
+
+12. What's the difference between host objects and native objects?
+
+13. Difference between: function Person(){}, var person = Person(), and var person = new Person()?
+
+14. What's the difference between .call and .apply?
+    .call(this, commaSepeartedListOfParms)
+    .apply(this, arrayOfParms)
+
+15. Explain Function.prototype.bind.
+
+  ECMAScript 5 defines an addition method called 'bind()'.the 'bind()' method create a new function instance whose this value is bound to the value to that was passed into 'bind()'.
+
+16. When would you use document.write()?
+
+17. What's the difference between feature detection, feature inference, and using the UA string?
+
+18. Explain Ajax in as much detail as possible.
+
+19. What are the advantages and disadvantages of using Ajax?
+
+20. Explain how JSONP works (and how it's not really Ajax).
+
+21. Have you ever used JavaScript templating?
+   yes
+
+22. If so, what libraries have you used?
+  knockout, Angualar2
+
+23. Explain "hoisting".
+
+24. Describe event bubbling.
+
+25. What's the difference between an "attribute" and a "property"?
+
+26. Why is extending built-in JavaScript objects not a good idea?
+
+27. Difference between document load event and document DOMContentLoaded event?
+
+28. What is the difference between == and ===?
+
+29. Explain the same-origin policy with regards to JavaScript.
+
 Make this work:
-duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
-Why is it called a Ternary expression, what does the word "Ternary" indicate?
-What is "use strict";? what are the advantages and disadvantages to using it?
-Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
-Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
-Why would you use something like the load event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
-Explain what a single page app is and how to make one SEO-friendly.
-What is the extent of your experience with Promises and/or their polyfills?
-What are the pros and cons of using Promises instead of callbacks?
-What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
-What tools and techniques do you use debugging JavaScript code?
-What language constructions do you use for iterating over object properties and array items?
-Explain the difference between mutable and immutable objects.
-What is an example of an immutable object in JavaScript?
-What are the pros and cons of immutability?
-How can you achieve immutability in your own code?
-Explain the difference between synchronous and asynchronous functions.
-What is event loop?
-What is the difference between call stack and task queue?
-Explain the differences on the usage of foo between function foo() {} and var foo = function() {}
+1. duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+
+2. Why is it called a Ternary expression, what does the word "Ternary" indicate?
+
+3. What is "use strict";? what are the advantages and disadvantages to using it?
+
+4. Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
+
+5. Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+
+6. Why would you use something like the load event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+
+7. Explain what a single page app is and how to make one SEO-friendly.
+
+8. What is the extent of your experience with Promises and/or their polyfills?
+
+9. What are the pros and cons of using Promises instead of callbacks?
+
+10. What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+   Typescript
+      Type Checking, compile errors vs runtime,
+
+11. What tools and techniques do you use debugging JavaScript code?
+
+12. What language constructions do you use for iterating over object properties and array items?
+
+13. Explain the difference between mutable and immutable objects.
+
+14. What is an example of an immutable object in JavaScript?
+
+15. What are the pros and cons of immutability?
+
+16. How can you achieve immutability in your own code?
+
+17. Explain the difference between synchronous and asynchronous functions.
+
+18. What is event loop?
+
+19. What is the difference between call stack and task queue?
+
+20. Explain the differences on the usage of foo between function foo() {} and var foo = function() {}
+
+
+
 Testing Questions:
 
-What are some advantages/disadvantages to testing your code?
-What tools would you use to test your code's functionality?
-What is the difference between a unit test and a functional/integration test?
-What is the purpose of a code style linting tool?
+1. What are some advantages/disadvantages to testing your code?
+
+2. What tools would you use to test your code's functionality?
+
+3. What is the difference between a unit test and a functional/integration test?
+
+4. What is the purpose of a code style linting tool?
+
 Performance Questions:
 
-What tools would you use to find a performance bug in your code?
-What are some ways you may improve your website's scrolling performance?
-Explain the difference between layout, painting and compositing.
-Network Questions:
+1. What tools would you use to find a performance bug in your code?
 
-Traditionally, why has it been better to serve site assets from multiple domains?
-Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
-What are the differences between Long-Polling, Websockets and Server-Sent Events?
-Explain the following request and response headers:
-Diff. between Expires, Date, Age and If-Modified-...
+2. What are some ways you may improve your website's scrolling performance?
+
+3. Explain the difference between layout, painting and compositing.
+
+
+Network Questions:
+1. Traditionally, why has it been better to serve site assets from multiple domains?
+
+2. Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+
+3. What are the differences between Long-Polling, Websockets and Server-Sent Events?
+
+4. Explain the following request and response headers:
+
+5. Diff. between Expires, Date, Age and If-Modified-...
 Do Not Track
 Cache-Control
 Transfer-Encoding
 ETag
 X-Frame-Options
 What are HTTP methods? List all HTTP methods that you know, and explain them.
+
+
 Coding Questions:
 
-Question: What is the value of foo?
+1. Question: What is the value of foo?
+   var foo = 10 + '20';
 
-var foo = 10 + '20';
-Question: How would you make this work?
+  ANS: "1020"
+
+2. Question: How would you make this work?
 
 add(2, 5); // 7
 add(2)(5); // 7
-Question: What value is returned from the following statement?
+
+3. Question: What value is returned from the following statement?
 
 "i'm a lasagna hog".split("").reverse().join("");
-Question: What is the value of window.foo?
+
+4. Question: What is the value of window.foo?
 
 ( window.foo || ( window.foo = "bar" ) );
-Question: What is the outcome of the two alerts below?
+
+5. Question: What is the outcome of the two alerts below?
 
 var foo = "Hello";
 (function() {
@@ -200,29 +441,36 @@ var foo = "Hello";
   alert(foo + bar);
 })();
 alert(foo + bar);
-Question: What is the value of foo.length?
+
+
+6. Question: What is the value of foo.length?
 
 var foo = [];
 foo.push(1);
 foo.push(2);
-Question: What is the value of foo.x?
+
+
+7. Question: What is the value of foo.x?
 
 var foo = {n: 1};
 var bar = foo;
 foo.x = foo = {n: 2};
-Question: What does the following code print?
+
+8. Question: What does the following code print?
 
 console.log('one');
 setTimeout(function() {
   console.log('two');
 }, 0);
 console.log('three');
+
+
 Fun Questions:
 
-What's a cool project that you've recently worked on?
-What are some things you like about the developer tools you use?
-Who inspires you in the front-end community?
-Do you have any pet projects? What kind?
-What's your favorite feature of Internet Explorer?
-How do you like your coffee?
+1. What's a cool project that you've recently worked on?
+2. What are some things you like about the developer tools you use?
+3. Who inspires you in the front-end community?
+4. Do you have any pet projects? What kind?
+5. What's your favorite feature of Internet Explorer?
+6. How do you like your coffee?
 ````

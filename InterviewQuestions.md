@@ -19,12 +19,12 @@ Can you describe the difference between progressive enhancement and graceful deg
 
 How would you optimize a website's assets/resources?
        https://developer.yahoo.com/performance/rules.html
-       
+
        https://www.sitepoint.com/web-site-optimization-steps/
 
        http://insights.dice.com/2013/09/20/front-end-engineer/
 
-       
+
 How many resources will a browser download from a given domain at a time?
     2 to 6, depends on browser, how configured
 
@@ -57,6 +57,17 @@ Have you used different HTML templating languages before?
 CSS Questions:
 
 What is the difference between classes and IDs in CSS?
+    Use a class when you want to consistently style multiple elements throughout the page/site. Classes are useful when you have, or possibly will have in the future, more than one element that shares the same style. An example may be a div of "comments" or a certain list style to use for related links.
+
+    Additionally, a given element can have more than one class associated with it, while an element can only have one id. For example, you can give a div two classes whose styles will both take effect.
+
+    Furthermore, note that classes are often used to define behavioral styles in addition to visual ones. For example, the jQuery form validator plugin heavily uses classes to define the validation behavior of elements (e.g. required or not, or defining the type of input format)
+
+    Examples of class names are: tag, comment, toolbar-button, warning-message, or email.
+    Use the ID when you have a single element on the page that will take the style. Remember that IDs must be unique. In your case this may be the correct option, as there presumably will only be one "main" div on the page.
+
+    Examples of ids are: main-content, header, footer, or left-sidebar.
+    A good way to remember this is a class is a type of item and the id is the unique name of an item on the page.
 
 What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 Describe Floats and how they work.

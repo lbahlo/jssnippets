@@ -333,24 +333,98 @@ JS Questions:
 
 Make this work:
 1. duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+    function duplicate(values) {
+      var len = values.length;
+
+      for (var i = 0; i < len; i++) {
+         values[len+i] = values[i];
+      }
+      return values;
+    }
 
 2. Why is it called a Ternary expression, what does the word "Ternary" indicate?
 
+      ternary operand accepts three parameters.
+      ternary operator ?:
+      conditional ? truethy_block : falsey_block
+
 3. What is "use strict";? what are the advantages and disadvantages to using it?
+    the short and most important answer here is that use strict is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. In general, it is a good practice.
+
+    Some of the key benefits of strict mode include:
+
+    Makes debugging easier. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions, alerting you sooner to problems in your code and directing you more quickly to their source.
+
+    Prevents accidental globals. Without strict mode, assigning a value to an undeclared variable automatically creates a global variable with that name. This is one of the most common errors in JavaScript. In strict mode, attempting to do so throws an error.
+
+    Eliminates this coercion. Without strict mode, a reference to a this value of null or undefined is automatically coerced to the global. This can cause many headfakes and pull-out-your-hair kind of bugs. In strict mode, referencing a a this value of null or undefined throws an error.
+
+    Disallows duplicate property names or parameter values. Strict mode throws an error when it detects a duplicate named property in an object (e.g., var object = {foo: "bar", foo: "baz"};) or a duplicate named argument for a function (e.g., function foo(val1, val2, val1){}), thereby catching what is almost certainly a bug in your code that you might otherwise have wasted lots of time tracking down.
+
+    Makes eval() safer. There are some differences in the way eval() behaves in strict mode and in non-strict mode. Most significantly, in strict mode, variables and functions declared inside of an eval() statement are not created in the containing scope (they are created in the containing scope in non-strict mode, which can also be a common source of problems).
+
+    Throws error on invalid usage of delete. The delete operator (used to remove properties from objects) cannot be used on non-configurable properties of the object. Non-strict code will fail silently when an attempt is made to delete a non-configurable property, whereas strict mode will throw an error in such a case.
 
 4. Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
+    function output(i,str){
+         console.log("i = " + i + " : " + str);
+    }
+
+    function fizzBuzz(n) {
+      if((n === undefined) || (n === null)) {
+        n =50; //default to 100
+      }
+
+      for (var i = 1; i <=n; i++){
+
+        if ( i%3===0 && i%5===0) {
+            // multipsel 5 & 3  output fizzbuzz
+            output(i,"fizzbuzz");
+        }
+        else if (i%3 === 0){
+           //multpiles of 3 output fizz
+           output(i,"fizz");
+        }
+        else if (i%5 === 0) {
+           // multiples of 5 output buzz    
+           output(i,"buzz");
+        }
+       else{
+           // else output nothing
+           output(i,"");
+        }
+
+      }
+
+    }
+
+    fizzBuzz();
 
 5. Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+
+    too enusre you don't mess with any thrid party code/plugins
+    prevents name collesions
+    only one global space, shared with other ```
+
+
 
 6. Why would you use something like the load event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
 7. Explain what a single page app is and how to make one SEO-friendly.
 
 8. What is the extent of your experience with Promises and/or their polyfills?
+      a bit, used them with DCAF for all http requests
+      with SMA used rxjs (observables) for http request 
 
 9. What are the pros and cons of using Promises instead of callbacks?
 
+      pros:
+        cleaner code
+        easier to report errors
+
+
 10. What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+
    Typescript
       Type Checking, compile errors vs runtime,
 
@@ -389,11 +463,36 @@ Testing Questions:
 Performance Questions:
 
 1. What tools would you use to find a performance bug in your code?
+     chrome dev tools (shows performance times for loadtime, user actions)
 
 2. What are some ways you may improve your website's scrolling performance?
 
+
+      Expensive Styles
+      Reflows and repaints
+      Failing to debouncing your scroll events (schule scrolling to only do
+        vs multiple refresh)
+
 3. Explain the difference between layout, painting and compositing.
 
+      Layout:-
+
+      Browser will determine how much space each element takes up and where to place it.
+
+      Painting:-
+
+      This is the process of filling in pixels. It involves drawing out elements.
+
+      Compositing:-
+
+      Browser draws element to the screen in the correct order (may have multiple layers) so the page renders correctly.
+
+      For more information:-
+
+      https://developers.google.com/we...
+
+4. ways to help with load time
+    http://www.webdesignerdepot.com/2013/02/how-to-speed-up-your-website-load-times/
 
 Network Questions:
 1. Traditionally, why has it been better to serve site assets from multiple domains?
@@ -403,6 +502,8 @@ Network Questions:
 3. What are the differences between Long-Polling, Websockets and Server-Sent Events?
 
 4. Explain the following request and response headers:
+
+These are very specific HTTP header information
 
 5. Diff. between Expires, Date, Age and If-Modified-...
 Do Not Track
@@ -418,12 +519,22 @@ Coding Questions:
 1. Question: What is the value of foo?
    var foo = 10 + '20';
 
-  ANS: "1020"
+   ANS: "1020"
 
 2. Question: How would you make this work?
 
-add(2, 5); // 7
-add(2)(5); // 7
+  add(2, 5); // 7
+  add(2)(5); // 7
+
+
+  ANS:
+  function sum(x) {
+    if (arguments.length == 2) {
+      return arguments[0] + arguments[1];
+    } else {
+      return function(y) { return x + y; };
+    }
+  }
 
 3. Question: What value is returned from the following statement?
 
@@ -445,16 +556,19 @@ alert(foo + bar);
 
 6. Question: What is the value of foo.length?
 
-var foo = [];
-foo.push(1);
-foo.push(2);
+    var foo = [];
+    foo.push(1);
+    foo.push(2);
 
+    ANS: 2
 
 7. Question: What is the value of foo.x?
 
-var foo = {n: 1};
-var bar = foo;
-foo.x = foo = {n: 2};
+    var foo = {n: 1};
+    var bar = foo;
+    foo.x = foo = {n: 2};
+
+    ANS:
 
 8. Question: What does the following code print?
 
@@ -473,4 +587,35 @@ Fun Questions:
 4. Do you have any pet projects? What kind?
 5. What's your favorite feature of Internet Explorer?
 6. How do you like your coffee?
+````
+
+
+
+````
+What happens after you click an url
+
+n an extremely rough and simplified sketch, assuming the simplest possible HTTP request, no proxies, IPv4 and no problems in any step:
+
+1. browser checks cache; if requested object is in cache and is fresh, skip to #9
+2. browser asks OS for server's IP address
+3. OS makes a DNS lookup and replies the IP address to the browser
+4. browser opens a TCP connection to server (this step is much more complex with HTTPS)
+5.browser sends the HTTP request through TCP connection
+6.browser receives HTTP response and may close the TCP connection, or reuse it for another request
+7.browser checks if the response is a redirect or a conditional response (3xx result status codes), authorization request (401), error (4xx and 5xx), etc.; these are handled differently from normal responses (2xx)
+8.if cacheable, response is stored in cache
+9.browser decodes response (e.g. if it's gzipped)
+10.browser determines what to do with response (e.g. is it a HTML page, is it an image, is it a sound clip?)
+11.browser renders response, or offers a download dialog for unrecognized types
+
+
+  browser check cahce, if requested object is in cache and is fresh, it uses the content
+  browser asks OS for server's IP address
+  OS makes a DNS lookup and replies the IP address to the browser
+  browser opens a TCP connection to the server
+  browser sends the HTTP request throught TCP connection.
+  browser receives HTTP response and close the TCP connection
+  browser checks if the response status.
+  if cacheable, reponse will be stored in chace
+  browser renders response, or offers a download diaglog.
 ````

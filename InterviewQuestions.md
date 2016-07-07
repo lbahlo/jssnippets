@@ -2,24 +2,26 @@ Front-end Job Interview Questions
 
 
 ### Software Architecture
+Software architecture refers to the high level structures of a software system, the discipline of creating such structures,
+and the documentation of these structures. These structures are needed to reason about the software system.
 
+#### Why is Architecture Important?
+Like any other complex structure, software must be built on a solid foundation. Failing to consider key scenarios,
+failing to design for common problems, or failing to appreciate the long term consequences of key decisions can put your application
+at risk. Modern tools and platforms help to simplify the task of building applications, but they do not replace the need to design your
+application carefully, based on your specific scenarios and requirements. The risks exposed by poor architecture include software
+that is unstable, is unable to support existing or future business requirements, or is difficult to deploy or manage in a production
+environment.
 
-The primary goal of software architecture is to define the non-functional requirements of a system and
-define the environment. The detailed design is followed by a definition of how to deliver the functional
-behavior within the architectural rules. Architecture is important because it:
-
-Controls complexity
-Enforces best practices
-Gives consistency and uniformity
-Increases predictability
-Enables re-use.
-
+Systems should be designed with consideration for the user, the system (the IT infrastructure), and the business goals. For each
+of these areas, you should outline key scenarios and identify important quality attributes (for example, reliability or scalability)
+and key areas of satisfaction and dissatisfaction. Where possible, develop and consider metrics that measure success in each of
+these areas.
 
 
 ### OOP Concepts
 
 #### What is OOP?
-
 Object-oriented programming (OOP) is a programming language model organized around objects rather than "actions" and
 data rather than logic. Historically, a program has been viewed as a logical procedure that takes input data, processes it,
 and produces output data.
@@ -37,21 +39,18 @@ Usually, other functions cannot act on this object.
 
 
 
-
 #### What is an Object?
-
-Each object is an instance of a particular class or subclass with the class's own methods or procedures and data variables.
-An object is what actually runs in the computer.
-
-In pure OOP terms an object is an instance of a class.
-
+In pure OOP terms an object is an instance of a class.  Objects are usable instances of classes. 
+When you instantiate this class, you are creating an instance object at runtime.
 
 
 #### What is a Class?
-
 A class is simply a representation of a type of object. It is the blueprint, or plan, or template, that describes
 the details of an object. A class is the blueprint from which the individual objects are created. Class is composed
 of three things: a name, attributes, and operations.
+
+A class is a definition of a template for creating objects. It consists of member variables (which may or may not be private, but are
+typically private) and member functions (or methods) which can act on these member variables
 
 
 
@@ -104,12 +103,9 @@ They contain not only most part of the business logic, but application logic and
 getting longer and complicated, then it is a good indication that you are burring your business logic inside the data access layer.
 
 
+### Data structures HashMap,Array,LinkedList,stack,queue -  define/useage
 
-1. Data structures HashMap,Array,LinkedList,stack,queue
-   define/useage
-  
-  
-     Lists represent a sequential ordering of elements.
+    ### Lists represent a sequential ordering of elements.
      
      HashMap - every object is a simple hashmap
      Maps are used to represent a collection of key / value pairs.
@@ -137,7 +133,7 @@ getting longer and complicated, then it is a good indication that you are burrin
           Line analogies, getting in line(queue) to wait to (do) something
      
      
-2. Describe Restful Routes
+### Describe Restful Routes
 
     REST (architecture)- representational state transfer. is a style of software architecture. As described in a dissertation by Roy Fielding,
     REST is an "architectural style" that basically exploits the existing technology and protocols of the Web.
@@ -155,11 +151,11 @@ getting longer and complicated, then it is a good indication that you are burrin
     
 
      
-3. Code a List <html> javascript
+### Code a List <html> javascript
 
-4. Simple SQL queries
+### Simple SQL queries
 
-5. Security Question
+### Security Question
 
 https://www.sans.org/reading-room/whitepapers/securecode/security-checklist-web-application-design-1389
 

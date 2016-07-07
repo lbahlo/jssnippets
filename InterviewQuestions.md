@@ -3,49 +3,108 @@ Front-end Job Interview Questions
 
 ### Software Architecture
 
-````
-The primary goal of software architecture is to define the non-functional requirements of a system and define the environment. The detailed design is followed by a definition of how to deliver the functional behavior within the architectural rules. Architecture is important because it:
+
+The primary goal of software architecture is to define the non-functional requirements of a system and
+define the environment. The detailed design is followed by a definition of how to deliver the functional
+behavior within the architectural rules. Architecture is important because it:
 
 Controls complexity
 Enforces best practices
 Gives consistency and uniformity
 Increases predictability
 Enables re-use.
-````
+
+
 
 ### OOP Concepts
 
 #### What is OOP?
 
-````
-OOP is a design philosophy. It stands for Object Oriented Programming. Object-Oriented Programming (OOP)
-uses a different set of programming languages than old procedural programming languages (C, Pascal, etc.).
-Everything in OOP is grouped as self sustainable "objects". Hence, you gain reusability by means of four
-main object-oriented programming concepts.
+Object-oriented programming (OOP) is a programming language model organized around objects rather than "actions" and
+data rather than logic. Historically, a program has been viewed as a logical procedure that takes input data, processes it,
+and produces output data.
 
-In order to clearly understand the object orientation model, let’s take your “hand” as an example. The “hand”
-is a class. Your body has two objects of the type "hand", named "left hand" and "right hand". Their main functions
-are controlled or managed by a set of electrical signals sent through your shoulders (through an interface). So
-the shoulder is an interface that your body uses to interact with your hands. The hand is a well-architected class.
-The hand is being reused to create the left hand and the right hand by slightly changing the properties of it.
+Object-oriented programming takes the view that what we really care about are the objects we want to manipulate rather 
+than the logic required to manipulate them. 
 
-What is an Object?
-An object can be considered a "thing" that can perform a set of related activities. The set of activities that
-the object performs defines the object's behavior. For example, the Hand (object) can grip something, or a Student
-(object) can give their name or address.
+In traditional class-based Object-Oriented Programming, a class is a definition of a template for creating objects. 
+It consists of member variables (which may or may not be private, but are typically private) and member functions (or methods)
+which can act on these member variables. When you instantiate this class, you are creating an instance object at runtime.
+
+Thus, an object consists of (private) state (i.e., the variables), as well as associated behaviour (i.e., the methods).
+The object is said to encapsulate both state and behaviour. To get the object to do something, you must invoke one of its methods.
+Usually, other functions cannot act on this object.
+
+
+
+
+#### What is an Object?
+
+Each object is an instance of a particular class or subclass with the class's own methods or procedures and data variables.
+An object is what actually runs in the computer.
 
 In pure OOP terms an object is an instance of a class.
 
-What is a Class?
+
+
+#### What is a Class?
+
 A class is simply a representation of a type of object. It is the blueprint, or plan, or template, that describes
 the details of an object. A class is the blueprint from which the individual objects are created. Class is composed
 of three things: a name, attributes, and operations.
 
 
 
-````
+#### What is Polymorphism 
+Polymorphism is the capacity to do "the same call" but to have different results (different code being executed)
+thanks to some kind of context.
+
+#### What is Encapsulation (or Information Hiding)?
 
 ````
+
+
+
+
+#### What is MVC architecture?
+
+The Model-View-Controller (MVC) architecture separates the modeling of the domain, the presentation,
+and the actions based on user input into three separate classes.
+
+Unfortunately, the popularity of this pattern has resulted in a number of faulty usages; each technology (Java, ASP.NET, etc.)
+has defined it in their own way making it difficult to understand. In particular, the term "controller" has been used to mean
+different things in different contexts. The definitions given bellow are the closes possible ones I found for ASP.NET version of MVC.
+
+
+*Model:* DataSet and typed DataSet (some times business object, object collection, XML, etc.) are the most common uses of the model.
+*View:* The ASPX and ASCX files generally handle the responsibilities of the view.
+*Controllers:* The handling of events or the controlling is usually done in the code-behind class.
+In a complex n-tier distributed system the MVC architecture place the vital role of organizing the presentation tier of the system.
+
+
+
+#### What is SOA?
+
+A service-oriented architecture is essentially a collection of services. These services communicate with each other.
+The communication can involve either simple data passing or it could involve two or more services coordinating some activity.
+Some means of connecting services to each other is needed.
+
+
+#### What is the Data Access Layer?
+
+The data access layer (DAL), which is a key part of every n-tier system, is mainly consist of a simple set of code that
+does basic interactions with the database or any other storage device. These functionalities are often referred to as
+CRUD (Create, Retrieve, Update, and Delete).
+
+The data access layer need to be generic, simple, quick and efficient as much as possible. It should not include complex
+application/ business logics.
+
+I have seen systems with lengthy, complex store procedures (SP), which run through several cases before doing a simple retrieval.
+They contain not only most part of the business logic, but application logic and user interface logic as well. If SP is 
+getting longer and complicated, then it is a good indication that you are burring your business logic inside the data access layer.
+
+
+
 1. Data structures HashMap,Array,LinkedList,stack,queue
    define/useage
   

@@ -72,9 +72,11 @@ has defined it in their own way making it difficult to understand. In particular
 different things in different contexts. The definitions given bellow are the closes possible ones I found for ASP.NET version of MVC.
 
 
-*Model:* DataSet and typed DataSet (some times business object, object collection, XML, etc.) are the most common uses of the model.
-*View:* The ASPX and ASCX files generally handle the responsibilities of the view.
-*Controllers:* The handling of events or the controlling is usually done in the code-behind class.
+**Model:** DataSet and typed DataSet (some times business object, object collection, XML, etc.) are the most common uses of the model.
+
+**View:** The ASPX and ASCX files generally handle the responsibilities of the view.
+
+**Controllers:** The handling of events or the controlling is usually done in the code-behind class.
 In a complex n-tier distributed system the MVC architecture place the vital role of organizing the presentation tier of the system.
 
 
@@ -102,12 +104,11 @@ getting longer and complicated, then it is a good indication that you are burrin
 
 ### Data structures HashMap,Array,LinkedList,stack,queue -  define/useage
 
-    ### Lists represent a sequential ordering of elements.
-     
-     HashMap - every object is a simple hashmap
+#### Lists represent a sequential ordering of elements.
+##### HashMap - every object is a simple hashmap
      Maps are used to represent a collection of key / value pairs.
      
-     Good Uses of:
+     **Good Uses of:**
       HashMap are efficient for locating a value based on a key and inserting and deleting values based on a key.
       The entries of a HashMap are not ordered.
       
@@ -126,7 +127,7 @@ getting longer and complicated, then it is a good indication that you are burrin
           enqueue add to back
           dequeue remove from front
           
-    Good Uses of:
+     Good Uses of:
           Line analogies, getting in line(queue) to wait to (do) something
      
      

@@ -1,5 +1,158 @@
 Front-end Job Interview Questions
 
+````
+1. Data structures HashMap,Array,LinkedList,stack,queue
+   define/useage
+  
+  
+     Lists represent a sequential ordering of elements.
+     
+     HashMap - every object is a simple hashmap
+     Maps are used to represent a collection of key / value pairs.
+     
+     Good Uses of:
+      HashMap are efficient for locating a value based on a key and inserting and deleting values based on a key.
+      The entries of a HashMap are not ordered.
+      
+     Array - 
+     Good Uses of:
+     
+     LinkedList - 
+     Good Uses of:
+     
+     Stack - A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.
+     Good Uses of:
+        - The simplest application of a stack is to reverse a word. You push a given word to stack - letter by letter - and then pop letters from the stack.
+        - Another application is an "undo" mechanism in text editors; this operation is accomplished by keeping all text changes in a stack.
+
+     Queue - A queue is a container of objects (a linear collection) that are inserted and removed according to the first-in first-out (FIFO) principle. 
+          enqueue add to back
+          dequeue remove from front
+          
+    Good Uses of:
+          Line analogies, getting in line(queue) to wait to (do) something
+     
+     
+2. Describe Restful Routes
+
+    REST (architecture)- representational state transfer. is a style of software architecture. As described in a dissertation by Roy Fielding,
+    REST is an "architectural style" that basically exploits the existing technology and protocols of the Web.
+    
+    The REST style emphasizes that interactions between clients and services is enhanced by having a limited number of operations (verbs). Flexibility is provided by assigning resources (nouns) their own unique Universal Resource Identifiers (URIs). Because each verb has a specific meaning (GET, POST, PUT and DELETE), REST avoids ambiguity.
+    
+    The "ST" in "REST" stands for "State Transfer", and indeed, in a good REST design operations are self-contained, and each
+    request carries with it (transfers) all the information (state) that the server needs in order to complete it.
+    
+    REST uses a smaller message format than SOAP. SOAP uses XML for all messages, which makes the message size much larger, and thus less efficient. T
+    
+    RESTful is typically used to refer to web services implementing such an architecture.
+    
+    RESTful APIS 
+    
+
+     
+3. Code a List <html> javascript
+
+4. Simple SQL queries
+
+5. Security Question
+
+https://www.sans.org/reading-room/whitepapers/securecode/security-checklist-web-application-design-1389
+
+Risk Assessment
+ Authentication
+        Authentication is a first line of defense. T
+
+ Authorization and Access Control
+        Authentication tells a user “I recognize you as a user.” Authorization says “Now that I
+        know who you are I also know what you are allowed to do; what data you are allowed to
+        see and modify.” Access control determines where a user can connect from; what time
+        they can connect, and the type of encryption required. The goal is to develop a security
+        strategy to protect back-end and front-end data and systems. This can be
+        accomplished through the use of roles, credentials, and sensitivity labels.8
+
+ Session Management - Project account information and session tokens
+    session Id attacks:
+        Intercetpion - Encrypting sessions
+        prediction - randomly assigned session ids
+        brute-force - kibg jetsoaces >
+        fixation - forcing assignment and frequent regeneration of session ids 
+        
+           
+ Data and InPut Validation
+        Cross-Site Scripting and Command Injection take advantage of a “violation of trust”17
+        between a user accessing a known and trusted site and an attacker. The attacker
+        bypasses security mechanisms by adding malicious code to open parameters in an
+        application. An open parameter could be a URL, QueryString, Header, Cookie, Form
+        Field, or a Hidden Field. It is any parameter that does not assure that the data entered
+        is data that would normally be expected. For example, if the parameter is a date field,
+        and the input “injected” into it is a script file, then the attacker has been successful in
+        finding and using an open parameter. Well-written code would discard the script. The
+        importance of knowi
+        
+        
+         The strongest defense against these attacks is Input Validation. If the server validates
+        all data entering the web application against known good criteria, the chances of
+        successful attack are greatly reduced. The burden of security validation must fall on the
+        server, and hence the application developer, rather than the client. Client-side
+        validation is often used as a primary validation to “reduce round trips to the server,” but
+        should not be used as a security defense. 18
+ 
+        
+
+ Cross Site Scripting (XSS)
+       - All code that accepts input from users via an HTTP request must be reviewed to ensure
+that it can identify large input. Once inappropriate data is identified the activity must be
+logged and the data droppe
+
+All data input fields must have reasonable field lengths and specific data types. Limit
+the amount of text allowed in free form fields.
+
+
+ Command Injection Flaws
+
+ Buffer Overflows
+
+ Error Handling
+
+During development write a policy for handling errors. Determine which errors should
+trigger a response to the end user. Carefully write error pages with appropriate
+information. The error page reported to the end user must be carefully crafted to give
+the user some information. However, an attacker can learn a tremendous amount of
+information about a website from default error messages. The messages “file not
+found” or “access denied” give hackers information about the file system structure and
+its permissions. Determine which errors should be logged.
+
+ Logging  Must have 
+
+ Remote Administration
+
+Assure that user roles and administration roles are clearly defined and that the program
+holds the roles to their intended use. You may also bind administrator functions to
+specific IP addresses using IP Filtering.
+
+
+ Web Application and Server Configuration
+
+
+
+Designing input validation strategies
+Partitioning Web sites into open and restricted areas
+Implementing effective account management practices
+Developing effective authentication and authorization strategies
+Protecting sensitive data
+Protecting user sessions
+Preventing parameter manipulation
+Handling exceptions securely
+Securing an application's configuration management features
+Listing audit and logging considerations
+
+6. What happend when you click url (put in my words)   see bittin
+
+````
+
+
+
 ```
 General Questions:
 
@@ -46,18 +199,95 @@ General Questions:
 HTML Questions:
 
 1. What does a doctype do?
+     The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration refers to a Document Type Definition (DTD).Oct 8, 2011
+
+    DOCTYPEs are required for legacy reasons. When omitted, browsers tend to use a different rendering mode that is incompatible with some specifications. Including the DOCTYPE in a document ensures that the browser makes a best-effort attempt at following the relevant specifications.
+
 2. What's the difference between full standards mode, almost standards mode and quirks mode?
+
+    There are now three modes used by the layout engines in web browsers: quirks mode, almost standards mode, and full standards mode. In quirks mode, layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications. In almost standards mode, there are only a very small number of quirks implemented.
+
+    The DOCTYPE shown in the example, <!DOCTYPE html>, is the simplest possible, and the one recommended by HTML5. Earlier versions of the HTML standard recommended other variants, but all existing browsers today will use full standards mode for this DOCTYPE, even the dated Internet Explorer 6. There are no valid reasons to use a more complicated DOCTYPE. If you do use another DOCTYPE, you may risk choosing one which triggers almost standards mode or quirks mode.
+
 3. What's the difference between HTML and XHTML?
+
 4. Are there any problems with serving pages as application/xhtml+xml?
+
+  IE < 8 will show a download dialog for the pages, instead of rendering them properly.
+
 5. How do you serve a page with content in multiple languages?
+
 6. What kind of things must you be wary of when design or developing for multilingual sites?
+
 7. What are data- attributes good for?
+    Store data in HTML to be used for more info/help, ect to use with not hits to server.
+    Accessed via : get/set Attributes() on a element
+
+    Thanks to HTML5, we now have the ability to embed custom data attributes on all HTML elements. These new custom data attributes consist of two parts:
+
+    Attribute Name
+    The data attribute name must be at least one character long and must be prefixed with 'data-'. It should not contain any uppercase letters.
+    Attribute Value
+    The attribute value can be any string.
+
+    We can now use this stored data in our site’s JavaScript to create a richer, more engaging user experience. Imagine that when a user clicks on a vegetable a new layer opens up in the browser displaying the additional seed spacing and sowing instructions. Thanks to the data- attributes we’ve added to our <li> elements, we can now display this information instantly without having to worry about making any Ajax calls and without having to make any server-side database queries.
+
 8. Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+        more semantic text markup
+        new form elements
+        vedio and audio
+        new javascript API
+        canvas and SVG
+        new communication API
+        geolocation API
+        web worker API
+        new data storage
+
 9. Describe the difference between a cookie, sessionStorage and localStorage.
+
+      localStorage and sessionStorage are both so-called WebStorages and features of HTML5.
+
+      localStorage stores information as long as the user does not delete them.
+
+      sessionStorage stores information as long as the session goes. Usually until the user closes the tab/browser.
+
+      cookies are simply cookies, which are supported by older browsers and usually are a fallback for frameworks that use the above mentioned WebStorages.
+
+      In contrast cookies can store way less information then WebStorages and the information in WebStorages is never transferred to the server.
+
+      Keep in mind that the EU has a regulation that requires websites to inform their users about the usage of cookies. I dont know whether this also applies to WebStorages
+
 10. Describe the difference between <script>, <script async> and <script defer>.
+      Excellent: http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
+      http://javascript.tutorialhorizon.com/2015/08/11/script-async-defer-attribute/
+
 11. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+       css:
+       quicker feedback fro user
+       It is recommended because when you have the CSS declared before <body> starts, your styles has actually loaded already. So very quickly users see something appear on their screen (e.g. background colors). If not, users see blank screen for some time before the CSS reaches the user.
+
+       prevent rerendering page if in body
+       Also, if you leave the the styles somewhere in the <body>, the browser has to re-render the page (new and old when loading) when the styles  declared has been parsed.
+
+       script:
+
 12. What is progressive rendering?
+
+    Progressive rendering is the name given to techniques used to render content for display as quickly as possible.
+
+    It used to be much more prevalent in the days before broadband internet but it's still useful in modern development as mobile data connections are becoming increasingly popular (and unreliable!)
+
+    Examples of such techniques :
+
+    Lazy loading of images where (typically) some javascript will load an image when it comes into the browsers viewport instead of loading all images at page load.
+    Prioritizing visible content (or above the fold rendering) where you include only the minimum css/content/scripts necessary for the amount of page that would be rendered in the users browser first to display as quickly as possible, you can then use deferred javascript (domready/load) to load in other resources and content.
+
 13. Have you used different HTML templating languages before?
+     No, frameworks have templating engines build in
+
+     angular1 (build in)
+     agnular2 (built in)
+     Durnadal (view composition build in)
 
 
 CSS Questions:
@@ -414,7 +644,7 @@ Make this work:
 
 8. What is the extent of your experience with Promises and/or their polyfills?
       a bit, used them with DCAF for all http requests
-      with SMA used rxjs (observables) for http request 
+      with SMA used rxjs (observables) for http request
 
 9. What are the pros and cons of using Promises instead of callbacks?
 
@@ -593,6 +823,35 @@ Fun Questions:
 
 ````
 What happens after you click an url
+
+1. Frist the browser will check to see if it has the requested object/page in cache and it is fresh (displayable) If found will go to decode/rendering step (see #9)
+
+2. Browser will ask OS for server's IP Address (need to be resolved, most likely will be a domain name reference that needs to be translated to an actual IP address)
+
+3. OS will request the DNS to lookup the IP Address (this process involves 4 (I think)  different lookups from different DNS resolution servers before the actually IP is resolved and returned to the OS )
+
+4.Then the OS will negotiate a TCP connection to the IP Address (server) and let browser know when done
+
+5. Then the browser will send the HTTP request through the TCP connection
+
+6. The browser receives HTTP response and may close the connection or reuse for a future request
+
+7. The browser checks the type of response to determine how to handle it
+        2xx  - request succeeded, (e.g. Page found - Ok)
+        3xx -  redirect or a conditional response (3xx result status codes),
+        4xx -  Authorization request, (e.g. 404 Page Not Found, something went wrong with request  ...
+        5xx -  error happened on server 
+        
+         
+8. Cache response if possible or configured
+
+9. The browser will decode response (if zipped will need to unzip )
+
+10. The browser determines what to do with response (e.g. is it a HTML page, is it an image, is it a sound clip?)
+
+11. The browser renders response, or offers a download dialog for unrecognized types
+
+
 
 n an extremely rough and simplified sketch, assuming the simplest possible HTTP request, no proxies, IPv4 and no problems in any step:
 

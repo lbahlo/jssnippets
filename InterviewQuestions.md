@@ -60,9 +60,6 @@ thanks to some kind of context.
 
 #### What is Encapsulation (or Information Hiding)?
 
-````
-
-
 
 
 #### What is MVC architecture?

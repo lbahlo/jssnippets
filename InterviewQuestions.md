@@ -106,30 +106,32 @@ getting longer and complicated, then it is a good indication that you are burrin
 
 #### Lists represent a sequential ordering of elements.
 ##### HashMap - every object is a simple hashmap
-     Maps are used to represent a collection of key / value pairs.
-     
+Maps are used to represent a collection of key / value pairs.
      **Good Uses of:**
       HashMap are efficient for locating a value based on a key and inserting and deleting values based on a key.
       The entries of a HashMap are not ordered.
+##### Array  
+     **Good Uses of:**
+     
+##### LinkedList- 
+     **Good Uses of:**
+     
+##### Stack - A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.
+     **Good Uses of:**
+      The simplest application of a stack is to reverse a word. You push a given word to stack - letter by letter -
+      and then pop letters from the stack.
       
-     Array - 
-     Good Uses of:
-     
-     LinkedList - 
-     Good Uses of:
-     
-     Stack - A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.
-     Good Uses of:
-        - The simplest application of a stack is to reverse a word. You push a given word to stack - letter by letter - and then pop letters from the stack.
-        - Another application is an "undo" mechanism in text editors; this operation is accomplished by keeping all text changes in a stack.
+     Another application is an "undo" mechanism in text editors; this operation is accomplished by keeping all text
+     changes in a stack.
 
-     Queue - A queue is a container of objects (a linear collection) that are inserted and removed according to the first-in first-out (FIFO) principle. 
+##### Queue - A queue is a container of objects (a linear collection) that are inserted and removed according to the first-in first-out (FIFO) principle. 
           enqueue add to back
           dequeue remove from front
           
-     Good Uses of:
+          **Good Uses of:**
           Line analogies, getting in line(queue) to wait to (do) something
      
+  
      
 ### Describe Restful Routes
 

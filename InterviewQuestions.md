@@ -1,8 +1,9 @@
 Front-end Job Interview Questions
 
-````
-Software Architecture
 
+#### Software Architecture
+
+````
 The primary goal of software architecture is to define the non-functional requirements of a system and define the environment. The detailed design is followed by a definition of how to deliver the functional behavior within the architectural rules. Architecture is important because it:
 
 Controls complexity
@@ -14,19 +15,28 @@ Enables re-use.
 OOP Concepts
 
 What is OOP?
-OOP is a design philosophy. It stands for Object Oriented Programming.
-Object-Oriented Programming (OOP) uses a different set of programming 
-languages than old procedural programming languages (C, Pascal, etc.).
-Everything in OOP is grouped as self sustainable "objects". Hence, you
- gain reusability by means of four main object-oriented programming concepts.
+OOP is a design philosophy. It stands for Object Oriented Programming. Object-Oriented Programming (OOP)
+uses a different set of programming languages than old procedural programming languages (C, Pascal, etc.).
+Everything in OOP is grouped as self sustainable "objects". Hence, you gain reusability by means of four
+main object-oriented programming concepts.
 
-In order to clearly understand the object orientation model, let’s take your “hand”
- as an example. The “hand” is a class. Your body has two objects of the type "hand",
-  named "left hand" and "right hand". Their main functions are controlled or managed 
-  by a set of electrical signals sent through your shoulders (through an interface). 
-  So the shoulder is an interface that your body uses to interact with your hands. 
-  The hand is a well-architected class. The hand is being reused to create the left
-   hand and the right hand by slightly changing the properties of it.
+In order to clearly understand the object orientation model, let’s take your “hand” as an example. The “hand”
+is a class. Your body has two objects of the type "hand", named "left hand" and "right hand". Their main functions
+are controlled or managed by a set of electrical signals sent through your shoulders (through an interface). So
+the shoulder is an interface that your body uses to interact with your hands. The hand is a well-architected class.
+The hand is being reused to create the left hand and the right hand by slightly changing the properties of it.
+
+What is an Object?
+An object can be considered a "thing" that can perform a set of related activities. The set of activities that
+the object performs defines the object's behavior. For example, the Hand (object) can grip something, or a Student
+(object) can give their name or address.
+
+In pure OOP terms an object is an instance of a class.
+
+What is a Class?
+A class is simply a representation of a type of object. It is the blueprint, or plan, or template, that describes
+the details of an object. A class is the blueprint from which the individual objects are created. Class is composed
+of three things: a name, attributes, and operations.
 
 
 

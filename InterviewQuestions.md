@@ -1,6 +1,38 @@
 Front-end Job Interview Questions
 
 ````
+Software Architecture
+
+The primary goal of software architecture is to define the non-functional requirements of a system and define the environment. The detailed design is followed by a definition of how to deliver the functional behavior within the architectural rules. Architecture is important because it:
+
+Controls complexity
+Enforces best practices
+Gives consistency and uniformity
+Increases predictability
+Enables re-use.
+
+OOP Concepts
+
+What is OOP?
+OOP is a design philosophy. It stands for Object Oriented Programming.
+Object-Oriented Programming (OOP) uses a different set of programming 
+languages than old procedural programming languages (C, Pascal, etc.).
+Everything in OOP is grouped as self sustainable "objects". Hence, you
+ gain reusability by means of four main object-oriented programming concepts.
+
+In order to clearly understand the object orientation model, let’s take your “hand”
+ as an example. The “hand” is a class. Your body has two objects of the type "hand",
+  named "left hand" and "right hand". Their main functions are controlled or managed 
+  by a set of electrical signals sent through your shoulders (through an interface). 
+  So the shoulder is an interface that your body uses to interact with your hands. 
+  The hand is a well-architected class. The hand is being reused to create the left
+   hand and the right hand by slightly changing the properties of it.
+
+
+
+````
+
+````
 1. Data structures HashMap,Array,LinkedList,stack,queue
    define/useage
   

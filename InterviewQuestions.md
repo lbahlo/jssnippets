@@ -368,10 +368,9 @@ Listing audit and logging considerations
 ````
 
 
+#### General Questions:
 
 ````
-
-General Questions:
 
 1. What did you learn yesterday/this week?
 2. What excites or interests you about coding?
@@ -457,10 +456,11 @@ Put links to css stylesheets in the <head>
 
 ````
 
+
+
+
+#### HTML Questions:
 ````
-
-
-HTML Questions:
 
 1. What does a doctype do?
      The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration refers to a Document Type Definition (DTD).Oct 8, 2011
@@ -521,9 +521,13 @@ HTML Questions:
 
       Keep in mind that the EU has a regulation that requires websites to inform their users about the usage of cookies. I dont know whether this also applies to WebStorages
 
-10. Describe the difference between <script>, <script async> and <script defer>.
+10. Describe the difference between
+
+````
+ <script>, <script async> and <script defer>.
       Excellent: http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
       http://javascript.tutorialhorizon.com/2015/08/11/script-async-defer-attribute/
+````
 
 11. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
        css:
@@ -554,12 +558,11 @@ HTML Questions:
      Durnadal (view composition build in)
 
 
-````
 
 ````
 
 
-CSS Questions:
+#### CSS Questions:
 
 1. What is the difference between classes and IDs in CSS?
     Use a class when you want to consistently style multiple elements throughout the page/site. Classes are useful when you have, or possibly will have in the future, more than one element that shares the same style. An example may be a div of "comments" or a certain list style to use for related links.

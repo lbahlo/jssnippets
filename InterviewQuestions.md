@@ -455,6 +455,10 @@ Put links to css stylesheets in the <head>
 20. Explain some of the pros and cons for CSS animations versus JavaScript animations.
 21. What does CORS stand for and what issue does it address?
 
+````
+
+````
+
 
 HTML Questions:
 
@@ -548,6 +552,11 @@ HTML Questions:
      angular1 (build in)
      agnular2 (built in)
      Durnadal (view composition build in)
+
+
+````
+
+````
 
 
 CSS Questions:
@@ -700,6 +709,11 @@ Have you ever used a grid system, and if so, what do you prefer?
 
   if view was fixed size, static, positions not relative, never needing to resize - absolute
   Any control that needs to resize, Responsive or Adpative views, write once target multiple platforms .... translate()
+
+````
+
+
+````
 
 
 JS Questions:

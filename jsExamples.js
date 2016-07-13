@@ -1,6 +1,17 @@
+````
+//Formulas
+//volume
+//cylinder
+
+//comibinations
+  nCr = n! / r! * (n - r)!, where n represents the total number of items,
+  and r represents the number of items being chosen at a time.
+
+//Probability
+Number of favorable outcomes/number of total outcomes
 
 
-
+````
 
 SQL Examples
 

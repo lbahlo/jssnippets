@@ -53,17 +53,97 @@ A class is a definition of a template for creating objects. It consists of membe
 typically private) and member functions (or methods) which can act on these member variables
 
 
+#### Big O
 
-#### What is Polymorphism 
+Where logs come up in algorithms and interviews
+"How many times must we double 1 before we get to nn" is a question we often ask ourselves in computer science. Or, 
+equivalently, "How many times must we divide nn in half in order to get back down to 1?"
+
+Can you see how those are the same question? We're just going in different directions! From nn to 1 by dividing by 2, or from 1 to nn by multiplying by 2. Either way, it's the same number of times that we have to do it.
+
+The answer to both of these questions is \log_{2}{n}log2​​ n
+
+
+So there it is. The total time cost of binary search is O(\log_{2}{n})O(log
+​2
+​​ n).
+
+It's okay if it's not obvious yet why that's true. We'll derive it with some examples.
+
+BIG 0 CHEAT SHEET
+https://www.packtpub.com/sites/default/files/downloads/4874OS_Appendix_Big_O_Cheat_Sheet.pdf
+
+
+**4 Fundamental Principles of OOP**
+
+#### Polymorphism 
 Polymorphism is the capacity to do "the same call" but to have different results (different code being executed)
 thanks to some kind of context.
 
-#### What is Encapsulation (or Information Hiding)?
+Polymorphism allows treating objects of a derived class as objects of its base class. For example, big cats (base class)
+catch their prey (a method) in different ways. A Lion (derived class) sneaks on it, while a Cheetah (another derived class)
+simply outruns it.
 
+Polymorphism allows us to treat a cat of random size just like a big cat and command it "catch your prey", regardless of its
+exact size.  Polymorphism can bear strong resemblance to abstraction, but it is mostly related to overriding methods in derived
+classes, in order to change their original behavior inherited from the base class. Abstraction is associated with creating an interface of a component or functionality (defining a role). We are going to explain method overriding shortly.
+
+
+#### Encapsulation (or Information Hiding)?
+General definition. In general, encapsulation is one of the four fundamentals of OOP (object-oriented programming). Encapsulation refers
+to the bundling of data with the methods that operate on that data.
+
+Encapsulation is one of the main concepts in OOP. It is also called "information hiding". An object has to provide its users
+only with the essential information for manipulation, without the internal details. A Secretary using a Laptop only knows about
+its screen, keyboard and mouse. Everything else is hidden internally under the cover. She does not know about the inner workings
+of Laptop, because she doesn’t need to, and if she does, she might make a mess. Therefore parts of the properties and methods remain hidden to her.
+The person writing the class has to decide what should be hidden and what not. When we program, we must define as private
+every method or field which other classes should not be able to access.
+
+#### Inheritance
+It allows a class to "inherit" (behavior or characteristics) of another, more general class. For example, a lion belongs to the
+biological family of cats (Felidae). All cats that have four paws,are predators and hunt their prey. This functionality can be coded
+once in the Felidae class and all its predators can reuseit – Tiger, Puma, Bobcat, etc. Inheritance is described as
+is-kind-of relationship, e.g. Tiger is kind of Animal.
+
+#### Abstraction
+We will learn how to work through abstractions: to deal with objects considering their important characteristics and ignore all 
+other details.
+
+Through the process of abstraction, a programmer hides all but the relevant data about an object in order to reduce complexity and 
+increase efficiency. In the same way that abstraction sometimes works in art, the object that remains is a representation of the 
+original, with unwanted detail omitted. The resulting object itself can be referred to as an abstraction, meaning a named entity
+made up of selected attributes and behavior specific to a particular usage of the originating entity. Abstraction is related to both
+encapsulation and data hiding.
 
 
 #### What is MVC architecture?
 
+
+#### Design Patterns
+**The Singleton Design Pattern** - This is the most popular and most frequently used design pattern. It allows a class to have only one instance
+and defines where it has to be taken from.
+
+**The Factory Method Design Pattern** -  It is intended for "producing" objects. The instantiation of an object is not performed 
+directly, but rather by the factory method. This allows the factory method to decide which specific instance to create from a
+family of classes implementing a common interface. The solution can depend on the environment, a parameter or some system setting.
+
+**Abstract Factory**
+**Prototype**
+**Adapter**
+**Composite**
+**Façade**
+**Command**
+**Observer**
+The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents,
+called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+**Iterator**
+**Event Emitter**
+The EventEmitter pattern allows implementors to emit an event to which the consumers can subscribe if they are interested. 
+This pattern may be familiar to you from the browser, where it is used for attaching DOM event handlers.
+
+
+#### What is MVC architecture?
 The Model-View-Controller (MVC) architecture separates the modeling of the domain, the presentation,
 and the actions based on user input into three separate classes.
 
@@ -71,25 +151,19 @@ Unfortunately, the popularity of this pattern has resulted in a number of faulty
 has defined it in their own way making it difficult to understand. In particular, the term "controller" has been used to mean
 different things in different contexts. The definitions given bellow are the closes possible ones I found for ASP.NET version of MVC.
 
-
 **Model:** DataSet and typed DataSet (some times business object, object collection, XML, etc.) are the most common uses of the model.
-
 **View:** The ASPX and ASCX files generally handle the responsibilities of the view.
-
 **Controllers:** The handling of events or the controlling is usually done in the code-behind class.
 In a complex n-tier distributed system the MVC architecture place the vital role of organizing the presentation tier of the system.
 
 
-
 #### What is SOA?
-
 A service-oriented architecture is essentially a collection of services. These services communicate with each other.
 The communication can involve either simple data passing or it could involve two or more services coordinating some activity.
 Some means of connecting services to each other is needed.
 
 
 #### What is the Data Access Layer?
-
 The data access layer (DAL), which is a key part of every n-tier system, is mainly consist of a simple set of code that
 does basic interactions with the database or any other storage device. These functionalities are often referred to as
 CRUD (Create, Retrieve, Update, and Delete).
@@ -103,18 +177,43 @@ getting longer and complicated, then it is a good indication that you are burrin
 
 
 ### Data structures HashMap,Array,LinkedList,stack,queue -  define/useage
-
 #### Lists represent a sequential ordering of elements.
 ##### HashMap - every object is a simple hashmap
 Maps are used to represent a collection of key / value pairs.
      **Good Uses of:**
       HashMap are efficient for locating a value based on a key and inserting and deleting values based on a key.
       The entries of a HashMap are not ordered.
-##### Array  
+##### Array 
+     An array is a low-level data structure that holds an ordered collection of elements. Each position in the array
+      has an index, starting with 0.  
+      Arrays are efficient for looking up the element at an index, because if you know the address where an array starts 
+      in memory, it’s simple math to find the address of any index. This gives arrays an O(1)O(1) lookup time.
+ 
+     Low level arrays are the foundation of many other data structures, like dynamic arrays, stacks, and objects.
+       
      **Good Uses of:**
      
-##### LinkedList- 
+##### LinkedList-   
+     A linked list is a low-level data structure. It stores an ordered list of items in individual "node" objects that
+     have pointers to other nodes.
+     
      **Good Uses of:**
+     
+     ** Advantages of linked lists: **
+
+    Linked lists have constant-time insertions and deletions in any position (you just change some pointers). Arrays 
+    require O(n)O(n) time to do the same thing, because you'd have to "shift" all the subsequent items over 1 index.
+    
+    Linked lists can continue to expand as long as there is space on the machine. Arrays (in low-level languages) must have 
+    their size specified ahead of time. Even in languages with "dynamic arrays" that automatically resize themselves when they 
+    run out of space (like Python, Ruby and JavaScript), the operation to resize a dynamic array has a large cost which can make a single insertion unexpectedly expensive.
+
+**Disadvantages of linked lists:**
+
+    To access or edit an item in a linked list, you have to take O(i)O(i) time to walk from the head of the list to the iith
+    item (unless of course you already have a pointer directly to that item). Arrays have constant-time lookups and edits to the
+    iith item.
+     
      
 ##### Stack - A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.
      **Good Uses of:**
@@ -132,22 +231,40 @@ Maps are used to represent a collection of key / value pairs.
           Line analogies, getting in line(queue) to wait to (do) something
      
   
+  
+### HTTP Is a request-response protocol.
+
+For example, a Web browser initiates a request to a server by opening a TCP/IP connection. The request itself
+comprises of a request line, of a set of request headers, and of an entity. The server sends a response that
+comprises of a status line, of a set of response headers, and of an entity.
+
+The entity in the request or response can be thought of simply as the payload, which may be binary data.
+The other items are readable ASCII characters. When the response has been completed, either the browser or 
+the server may terminate the TCP/IP, or the browser can send another request.
+
+To know more about how the internet works you can
+http://www.theshulers.com/whitepapers/internet_whitepaper/index.html#http
+
+
      
 ### Describe Restful Routes
+REST (architecture)- representational state transfer. is a style of software architecture. As described in a dissertation by Roy Fielding,
 
-    REST (architecture)- representational state transfer. is a style of software architecture. As described in a dissertation by Roy Fielding,
-    REST is an "architectural style" that basically exploits the existing technology and protocols of the Web.
+REST is an "architectural style" that basically exploits the existing technology and protocols of the Web.
     
-    The REST style emphasizes that interactions between clients and services is enhanced by having a limited number of operations (verbs). Flexibility is provided by assigning resources (nouns) their own unique Universal Resource Identifiers (URIs). Because each verb has a specific meaning (GET, POST, PUT and DELETE), REST avoids ambiguity.
+The REST style emphasizes that interactions between clients and services is enhanced by having a limited number of operations (verbs).
+Flexibility is provided by assigning resources (nouns) their own unique Universal Resource Identifiers (URIs). Because each verb
+has a specific meaning (GET, POST, PUT and DELETE), REST avoids ambiguity.
     
-    The "ST" in "REST" stands for "State Transfer", and indeed, in a good REST design operations are self-contained, and each
-    request carries with it (transfers) all the information (state) that the server needs in order to complete it.
+The "ST" in "REST" stands for "State Transfer", and indeed, in a good REST design operations are self-contained, and each
+request carries with it (transfers) all the information (state) that the server needs in order to complete it.
     
-    REST uses a smaller message format than SOAP. SOAP uses XML for all messages, which makes the message size much larger, and thus less efficient. T
+REST uses a smaller message format than SOAP. SOAP uses XML for all messages, which makes the message size much larger, and thus less 
+efficient. T
     
-    RESTful is typically used to refer to web services implementing such an architecture.
+RESTful is typically used to refer to web services implementing such an architecture.
     
-    RESTful APIS 
+  
     
 
      
@@ -259,6 +376,7 @@ General Questions:
 1. What did you learn yesterday/this week?
 2. What excites or interests you about coding?
 3. What is a recent technical challenge you experienced and how did you solve it?
+
 4. What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 5. Talk about your preferred development environment.
 6. Which version control systems are you familiar with?
@@ -282,7 +400,42 @@ General Questions:
 
 12. What are the exceptions?
 
-13. Name 3 ways to decrease page load (perceived or actual load time).
+13. Name 3 ways to decrease page load (perceived or actual load time). 
+
+http://stevesouders.com/hpws/rules.php
+
+       Progressive Web App Developement
+             Initial Load, Responsivness
+     a. ensure some HTML is immediately loaded (Angular2 will allow you to load a pre-built version of home page - ) 
+     before any scripts are loaded which is a blocking activity
+     b. optimized - minify (e.g. make as small as possible)
+     c. Once Initial prebuild page is loaded use a service worker to lazy load rest of app
+     (Image Sprites, reduce resources per page, bundle to limit htis to server)
+     
+     
+Rule 1 - Make Fewer HTTP Requests
+Rule 2 - Use a Content Delivery Network
+Rule 3 - Add an Expires Header
+Rule 4 - Gzip Components
+Rule 5 - Put Stylesheets at the Top - to help prevent FOUC
+Rule 6 - Put Scripts at the Bottom
+Rule 7 - Avoid CSS Expressions
+Rule 8 - Make JavaScript and CSS External
+Rule 9 - Reduce DNS Lookups
+Rule 10 - Minify JavaScript
+Rule 11 - Avoid Redirects
+Rule 12 - Remove Duplicate Scripts
+Rule 13 - Configure ETags
+
+Ensure the server provides a validation token (ETag): validation tokens eliminate the need to transfer the same bytes when a resource
+has not changed on the server.
+
+Rule 14 - Make AJAX Cacheable
+     
+     https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=en
+     
+     
+     
 
 14. If you jumped on a project and they used tabs and you used spaces, what would you do?
 15. Describe how you would create a simple slideshow page.
@@ -290,7 +443,14 @@ General Questions:
     REACT,  rxjs Observables
 
 17. Explain the importance of standards and standards bodies.
+
 18. What is Flash of Unstyled Content? How do you avoid FOUC?
+A flash of unstyled content (FOUC) is an instance where a web page appears briefly with the browser's default styles prior to
+loading an external CSS stylesheet, due to the web browser engine rendering the page before all information is retrieved. The page
+corrects itself as soon as the style rules are loaded and applied; however, the shift may be distracting.
+
+Put links to css stylesheets in the <head>
+
 19. Explain what ARIA and screenreaders are, and how to make a website accessible.
 20. Explain some of the pros and cons for CSS animations versus JavaScript animations.
 21. What does CORS stand for and what issue does it address?

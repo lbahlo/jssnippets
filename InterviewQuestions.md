@@ -61,16 +61,15 @@ equivalently, "How many times must we divide nn in half in order to get back dow
 
 Can you see how those are the same question? We're just going in different directions! From nn to 1 by dividing by 2, or from 1 to nn by multiplying by 2. Either way, it's the same number of times that we have to do it.
 
-The answer to both of these questions is \log_{2}{n}log2​​ n
+The answer to both of these questions is O(log2 n)
+Binary Search :  O(n log2 n)
 
 
-So there it is. The total time cost of binary search is O(\log_{2}{n})O(log
-​2
-​​ n).
 
-It's okay if it's not obvious yet why that's true. We'll derive it with some examples.
+
 
 BIG 0 CHEAT SHEET
+
 https://www.packtpub.com/sites/default/files/downloads/4874OS_Appendix_Big_O_Cheat_Sheet.pdf
 
 
